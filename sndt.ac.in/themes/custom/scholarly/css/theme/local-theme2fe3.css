@@ -1,0 +1,300 @@
+/* Use this CSS file to override theme CSS rules */
+
+.logo img{
+width: 154.717px!important;
+height:110px!important;
+}
+
+h1{
+text-transform: capitalize !important;
+}
+
+
+@media screen and (min-width: 601px) {
+  .logo img{
+width: 154.717px!important;
+height:110px!important;
+}
+
+  
+#block-headertop
+{
+width:1050px!important;
+}
+
+#header 
+{
+  padding: 40px 0 0px 0!important;
+  position:relative!important;
+}
+
+#header-inside 
+{
+    margin-top: -25px !important;
+}
+
+
+#header-top-menu-link-content69313134-c8b2-41dc-b900-b998657e09f1 a
+  {
+	display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:5em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+   #header-top-views-viewviewsabout-uspage-1 a
+  {
+	display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:6.5em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+   #header-top-views-viewviewsour-administratorspage-1 a
+  {
+	display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:9.5em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+  #header-top-menu-link-contente9e415ef-b92e-4b83-ae12-d94de95e5762 a
+  {
+    display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:6em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+  #header-top-menu-link-content2db0f33d-804c-4067-a04c-1c04303e494b a
+  {
+    display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:7em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+
+  #header-top-menu-link-content94aa09fa-8175-47ef-b235-b9f97a1b869f a
+  {
+    display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:6em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+  #header-top-menu-link-contentf623433b-f341-44ad-8252-f60777bd3674 a
+  {
+    display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:6em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+  #header-top-menu-link-contentea63ce45-d0b5-4980-a8c7-966e19dac16c a
+  {
+     display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:5.5em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+  #header-top-menu-link-contentf623433b-f341-44ad-8252-f60777bd3674 a
+  {
+    display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:6em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+  #header-top-menu-link-content102ec191-1dbc-4eab-a2c7-7a7b900bb3b7 a
+  {
+    display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:6em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+  
+  #header-top-menu-link-contentad3fbef9-56f6-4106-a505-5fffa99fb7ae a
+  {
+    display: inline-block!important;
+	text-align:center!important;
+	float:none!important;
+	width:6em!important;
+	padding:10px!important;
+	margin:0px!important;
+  }
+
+.site-name a{
+font-size: 30px!important;
+font-family: "cambria", sans-serif;
+color:#1414aa!important;
+}
+
+.site-slogan a{
+font-size: 26px;
+font-family: "cambria", sans-serif!important;
+}
+
+.site-branding__name a{
+text-align: left!important;
+}
+
+.site-name.site-branding__name {
+width: 250%!important;
+text-align: left!important;
+font-size: 20px;
+font-family: "cambria", sans-serif!important;
+
+}
+
+.site-slogan.site-branding__slogan{
+width:250%!important;
+text-align: left!important;
+font-size: 16px;
+font-family: "cambria", sans-serif!important;
+color:#404040!important;
+
+}
+
+ 
+.site-slogan.site-branding__slogan::after {
+  content: 'Shreemati Nathibai Damodar Thackersey Women\0027s University \A Reaccredited by NAAC, Awarded \0022 A\0022  Grade';
+  white-space:pre;
+}
+
+#disfr
+{
+    display:block;
+}
+
+.onscroll .header-container .logo
+{
+display:none;
+}
+
+
+#block-copyright
+{
+  width:251%!important;
+} 
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+
+.logo img{
+width: 154.717px!important;
+height:110px!important;
+}
+
+.tp-revslider-mainul {
+    height: 190px !important;
+}
+.tp-leftarrow.tparrows.noSwipe {
+    width: 40px !important;
+    height: 40px !important;
+    display:none!important;
+}
+.tp-rightarrow.tparrows.noSwipe {
+    width: 40px !important;
+    height: 40px !important;
+    display:none!important;
+}
+
+.tp-bannertimer.tp-bottom
+{
+    display:none!important;	
+}
+
+.slider-revolution.revslider-initialised.tp-simpleresponsive
+{
+    height: 170px !important;
+    max-height:170px!important;	
+}
+
+#main-content
+{
+      margin-top: -30px!important;
+}
+
+
+.site-slogan.site-branding__slogan::after {
+  content: 'Shreemati Nathibai Damodar Thackersey Women\0027s University \A Reaccredited by NAAC, Awarded \0022 A\0022  Grade';
+}
+
+
+.site-name a{
+font-family: "cambria", sans-serif;
+color:#1414aa!important;
+}
+
+#header 
+{
+  padding: 40px 0 0px 0!important;
+  position:relative!important;
+}
+
+#header-inside 
+{
+    margin-top: -25px !important;
+}
+
+ 
+#disfr
+{
+    display:none;
+}
+
+#block-disablefriendlyblock
+{
+    display:none!important;
+}
+
+#block-topmostemptyblock
+{
+    display:none!important;
+}
+
+.search-block-form
+{
+    margin-top: -12px!important;
+}
+
+.img-box 
+{ 
+   padding:1px!important;
+   border:2px solid #FFFFFF!important;"
+ 
+}
+
+.onscroll .header-container .logo
+{
+display:none;
+}
+
+
+#block-copyright
+{
+  width:100%!important;
+}
+}

@@ -1,0 +1,80 @@
+.view-mt-events .views-row {
+  position: relative;
+  min-height: 95px;
+  padding-bottom: 10px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #acacac;
+}
+.block-views .view-mt-events .views-row {
+  margin-bottom: 20px;
+}
+.view-mt-events .views-row-last {
+  border-bottom: none;
+}
+.view-mt-events .views-field-field-mt-event-date {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-color: #252525;
+  top: 4px;
+  left: 0;
+}
+.view-mt-events .views-field-field-mt-event-date time {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 900;
+  position: absolute;
+  bottom: -4px;
+  right: -2px;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1;
+}
+.view-mt-events .view-event-wrapper .views-field-title,
+.view-mt-events .view-event-wrapper .views-field-body,
+.view-mt-events .view-event-wrapper .views-field-view-node,
+.view-mt-events .more-link {
+  margin-left: 95px;
+}
+.view-mt-events .views-field-body {
+  line-height: 1.375;
+}
+.view-mt-events .views-field-body p {
+  padding: 0;
+}
+.view-mt-events .views-field-view-node,
+.view-mt-events .more-link {
+  margin-top: 5px;
+}
+.view-mt-events .views-row .more-link a {
+  text-transform: none;
+}
+.view-mt-events .views-row .more-link a:after {
+  content: "";
+}
+.hot-events .more-link {
+  margin-left: 0;
+}
+.hot-events .more-link a {
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .col-md-2 .view-mt-events .views-field-field-mt-event-date {
+    position: relative;
+    margin: 0 0 15px 0;
+  }
+  .col-md-2 .view-mt-events .views-field-title,
+  .col-md-2 .view-mt-events .views-field-body,
+  .col-md-2 .view-mt-events .more-link {
+    margin-left: 0;
+  }
+}
+
+/*Event map*/
+#event-map {
+  height: 250px;
+  margin: 20px 0;
+}
+#event-map img {
+  max-width: inherit;
+}
