@@ -1,0 +1,1671 @@
+<!--Keep these changes, in future if we want to add pop. -->
+<!-- POP-up code-->
+<!--<div class="modal fade" id="homePageModal" role="dialog" style="display:none;">-->
+<!--  <div class="modal-dialog modal-sm">-->
+<!--      <div class="modal-content" id="modalelement">-->
+<!--        <div class="modal-header text" style="background-color: #993333">-->
+<!--            <button type="button" class="close" id="closebtn" data-dismiss="modal" style="color: #ffffff;opacity: 1;margin: 20px;padding: 10px;font-size: 30px;outline: none;">&times;</button>-->
+<!--            <div class="marginTop10" style="margin-left: 20px">-->
+<!--                <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/swayam_logo.png" alt="swayam-logo">-->
+<!--                <h2 class="modal-title marginTop20" style="float: none;color: #ffffff;">-->
+<!--                    Beware of fraudulent phishing emails-->
+<!--                </h2>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="modal-body">-->
+<!--            <div class="text-left">-->
+<!--                <div class="padding10"> Dear Learner, </div>-->
+<!--                <div class="padding10"> Please remember that Swayam Coordinators will never demand money via email. <br/>Please do not respond to such fraudulent emails. Please do not share any financial or personal information.</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<script>-->
+<!--//  Popup foucs trap and escape key-->
+<!--const modal = document.querySelector('#modalelement');-->
+<!--var closebtnfocus = document.getElementById('closebtn');-->
+
+<!--function crosskey() {-->
+<!--    document.getElementById('closebtn').click();-->
+<!--}-->
+
+<!--modal.addEventListener('keydown', function (event) {-->
+
+<!--    let isTabPressed = event.key === 'Tab' || event.keyCode === 9;-->
+<!--    if (isTabPressed) {-->
+<!--        closebtnfocus.focus();-->
+<!--        event.preventDefault();-->
+<!--    }-->
+<!--});-->
+
+<!--document.addEventListener('keydown', function (event) {-->
+
+<!--    let isEscapePressed = event.keyCode === 27;-->
+<!--    if (isEscapePressed) {-->
+<!--        crosskey();-->
+<!--    }-->
+<!--});-->
+
+<!--</script>-->
+
+<!-- END :: POP-up code  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from swayam.gov.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 07:37:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WCQT3YNG8C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               gtag('config', 'G-WCQT3YNG8C');
+    </script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title class="notranslate">Swayam Central</title>
+<!-- Swayam CSS -->
+<link rel="icon" href="https://storage.googleapis.com/swayam2_central/assets/img/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="152x152" href="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/180x180.png">
+<link rel="icon" type="image/png" sizes="196x196" href="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/196x196.png">
+<link href="../storage.googleapis.com/swayam2_central/assets/css/swayam_css/bootstrap.min.css" rel="stylesheet">
+<link href="../storage.googleapis.com/swayam2_central/assets/css/swayam_css/main.css" rel="stylesheet">
+<link href="../storage.googleapis.com/swayam2_central/assets/css/swayam_css/header_css.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Restrict CSS/JS loading from external CDN. Reverting to cloudflare as its not working from our CDN. Check this later -->
+<!--link rel="stylesheet" href="https://storage.googleapis.com/swayam2_central/assets/css/swayam_css/font-awesome.min.css" -->
+<style>
+.goog-te-combo {
+	display: inline-block;
+	position: relative;
+	width: 47px;
+	/* Set the width of your image */
+	height: 22px;
+	/* Set the height of your image */
+	background: url("https://storage.googleapis.com/swayam2_central/assets/img/languages.svg");
+	/* Set the image path */
+	background-size: cover;
+	/* Adjust image sizing */
+	cursor: pointer;
+	border: unset;
+	background-color: transparent;
+    color: transparent;
+}
+</style>
+
+<!-- Swayam JS -->
+<script src="../storage.googleapis.com/swayam2_central/assets/js/swayam_js/jquery.js"></script>
+<script src="../storage.googleapis.com/swayam2_central/assets/js/swayam_js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var idleTime = 0;
+var current_user_email = 'None';
+$(document).ready(function () {
+    //home page modal triggered here based on session storage check
+    let popUpFlagVal = sessionStorage.getItem("popUpFlag");
+    if(popUpFlagVal !== "true" || popUpFlagVal === "undefined"){
+     
+        //     $("#homePageModal").modal({
+        //     show: true,
+        //     backdrop: 'static',
+        //     keyboard: false
+        // });
+     
+ 
+        sessionStorage.setItem("popUpFlag", "true");
+    }
+    //Increment the idle time counter every minute.
+    var currentUserEmail = 'None'
+
+    if (currentUserEmail != "None"){
+       var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+    }
+
+
+    //Zero the idle timer on mouse movement.
+    $(this).mousemove(function (e) {
+        idleTime = 0;
+    });
+    $(this).keypress(function (e) {
+        idleTime = 0;
+    });
+});
+
+function timerIncrement() {
+    idleTime = idleTime + 1;
+
+    if (idleTime > 119) { // 120 minutes
+        window.location.replace("https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/logout?post_logout_redirect_uri=https://swayam.gov.in/wso_logout");
+    }
+}
+</script>
+</head>
+<body class="homepage HeaderMargin">
+<div class="container">
+    <div class="modal fade notranslate" id="ConfirmPopupModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-body">
+                <div class="pop_up_container">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" style="color: #fff ;opacity: 1;" data-dismiss="modal" type="button">&times;</button>
+                            <h4 id="popup-title" class="modal-title" style="color:#fff ;font-size: 20px;text-align: left;"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="popup-question" style="font-size: 20px; padding-bottom: 10px"></p>
+                            <a id="popup-link" target="newWin">
+                                <button class="btn" onclick="close_modal();">Continue</button>
+                            </a>
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.modal-dialog {
+    width: 800px;
+}
+@media (max-width: 768px) {
+  .modal-dialog.modal-sm {
+    width: 300px;
+    margin: 30px auto;
+  }
+}
+</style>
+
+<script>
+function redirect_confirmation(title, text, link) {
+    $("#popup-title").text(title);
+    $("#popup-question").text(text);
+    $("#popup-link").attr('href', link);
+    return false; // To avoid refreshing page
+}
+
+function close_modal() {
+    $(".close").click();
+}
+</script>
+<header id="header">
+  <!--Top Bar [START]-->
+    <div class="row" style="background: #003987">
+        <div class="container">
+            <div style="width: 100%; height: 100%;">
+                <div class="top-section">
+                    An initiative by Ministry of Education (Govt. of India)
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="container modified-container notranslate">
+    <div class="row display-flex-space-btn" style="padding:8px">
+      <div class="col-2 custome-width header_align mv-swayam-image-wrap" style="--w:12%">
+          <a href="index.html" class="mv-swayam-logo">
+        <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_logo.png" alt="swayam-logo" class="mv-swayam-image" style="max-width:85% !important">
+              </a>
+
+          <!-- MobileView Sign Register BTn  -->
+          
+              <li>
+                  <a href=https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/authorize?response_type=code&amp;client_id=019220f4-2ec0-41c2-a727-529f1b54bb06&amp;redirect_uri=https%3A%2F%2Fswayam.gov.in%2Fwso_ok&amp;scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&amp;state=XLPhF234c8XaKTQClnwbKrU5qZzPrZ&amp;access_type=authorization_code style="padding-top:0px;" tabindex="-1" class="mv-btn-tag">
+                      <button type="submit" name="submit" class="btn btn-primary-v2 mv-signin-btn mv-display"
+                              style="margin: 0px;">
+                          Sign-In / Register
+                      </button>
+                  </a>
+              </li>
+          
+
+      </div>
+      <div class="col-8 custome-width header_align" style="padding:8px;">
+
+          <!-- <div class="navbar-header"> -->
+              <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                      data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+          </div> -->
+          <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+              <div class="HeaderBanner" style="margin-top:10px">
+                  <a href="about.html">About Swayam</a>|
+                  <a href="explorer.html">All Courses</a>|
+                  <a href="nc_details/index.html">National Coordinator</a>|
+                  <a href="../nptel.ac.in/LocalChapter/index.html" data-toggle="modal" data-target="#ConfirmPopupModal"
+                     onClick="return redirect_confirmation('LOCAL CHAPTERS', 'You are being redirected to a different site. Do you want to continue?',
+                    '../nptel.ac.in/LocalChapter/index.html');">Local Chapters</a> |
+                  <a href="faq.html">FAQ</a> |
+                  
+                      <a href="https://swayam-plus.swayam2.ac.in/" data-toggle="modal" data-target="#ConfirmPopupModal"
+                         onClick="return redirect_confirmation('SWAYAM PLUS', 'You are being redirected to a different site. Do you want to continue?',
+                            'https://swayam-plus.swayam2.ac.in/');">Swayam Plus
+                      </a>|
+                  
+                  
+                      <div class="dropdown" style="display:inline">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                  onclick="toggle_dropdownmenu('announcement_dropdown-menu');" data-toggle="dropdown" aria-haspopup="true"
+                                  aria-expanded="false" style="font-weight:bold">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/annocement.png" height="20px" width="20px">
+                              <i class="fa fa-angle-down"></i>
+                          </button>
+
+                          <ul id="announcement_dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align:left;width:175%;min-width:200px;">
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://exams.nta.ac.in/swayam" target="_blank" style="max-width: 300px; white-space: initial;">Exam registration dates extended for SWAYAM till 28th April</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://sites.google.com/nptel.iitm.ac.in/help-center-swayamnpteltrans/home" target="_blank" style="max-width: 300px; white-space: initial;">SWAYAM Courses in Regional languages</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://exams.nta.ac.in/swayam/images/SWAYAM-12-PN.pdf" target="_blank" style="max-width: 300px; white-space: initial;">Revised dates for SWAYAM January 2024 Semester Exams are 18th, 19th, 26th &amp; 27th May 2024</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://docs.google.com/document/d/e/2PACX-1vQ5AWX8_3OxNEKGU93uHlV9SwAZvqojmujUQYNbWKpOWpl0SldzKXUiOLSeWq6iiw/pub" target="_blank" style="max-width: 300px; white-space: initial;">Launch of राष्ट्रीय e-पुस्तकालय  (Rashtriya e-Pustakalaya) Mobile application</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://exams.nta.ac.in/swayam" target="_blank" style="max-width: 300px; white-space: initial;">Confirmation on exam dates for upcoming July-2024 semester</a></li>
+                              
+                          </ul>
+                      </div>
+                  
+                  <div id="google_translate_element" style="display:inline-flex;height:33px"></div>
+                  <!-- Asynchronous Google Translate load -->
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                              new google.translate.TranslateElement({
+                                pageLanguage: 'en',
+                                includedLanguages: 'en,hi,bn,gu,ml,mr,kn,ta,te'
+                              },
+                              'google_translate_element');
+                            }
+                            var googleTranslateScript = document.createElement('script');
+                            googleTranslateScript.type = 'text/javascript';
+                            googleTranslateScript.async = true;
+                            googleTranslateScript.src = '../translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(googleTranslateScript);
+                        </script>
+                  <!-- End script Asynchronous Google Translate load -->
+              </div>
+          <!-- </div> -->
+      </div>
+      <div class="col-2 custome-width header_align web-display" style="padding-top:10px;--w:15%">
+          
+        <li>
+          <a href=https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/authorize?response_type=code&amp;client_id=019220f4-2ec0-41c2-a727-529f1b54bb06&amp;redirect_uri=https%3A%2F%2Fswayam.gov.in%2Fwso_ok&amp;scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&amp;state=XLPhF234c8XaKTQClnwbKrU5qZzPrZ&amp;access_type=authorization_code style="padding-top:0px;" tabindex="-1">
+            <button type="submit" name="submit" class="btn btn-primary-v2 dv-hide" style="margin: 0px;font-size: 11px;">
+                Sign-In / Register
+            </button>
+          </a>
+        </li>
+
+           
+
+    </div>
+      </div>
+  </div>
+
+</header>
+<div id="back-to-top" style="bottom: 20px;right: 20px;position: fixed;display: none;z-index: 1" onclick="topFunction()">
+  <img src="../storage.googleapis.com/swayam2_central/assets/img/Up_arrow_48.png">
+</div>
+
+<script>
+  function redirectToCatalogWithSearchQuery(event) {
+      // Proceed only if user clicks on Search icon
+      if (event.type == "click") {
+          document.location = "/explorer?searchText=" + document.getElementById('header-search-query').value;
+      }
+  }
+  backtotop = document.getElementById("back-to-top");
+
+  window.onscroll = function() {
+      scrollFunction()
+  };
+
+  function scrollFunction() {
+      let threshold_pixel_value = 100;
+      if (document.body.scrollTop > threshold_pixel_value || document.documentElement.scrollTop > threshold_pixel_value) {
+          backtotop.style.display = "block";
+      } else {
+          backtotop.style.display = "none";
+      }
+  }
+
+  function topFunction() {
+      $(window).scrollTop(0);
+  }
+
+  function toggle_dropdownmenu(ul_id){
+     const menuHeight = $('#' + ul_id).outerHeight();
+     $('#' + ul_id).toggle();
+     $('#' + ul_id).css('min-height', menuHeight);
+  }
+</script>
+
+<!--carusel section and statics count section-->
+<div class="container mv-home-page-container" >
+  <style>
+
+.statics {
+	background: #003987;
+	color: white;
+	padding: 1% 0%;
+}
+
+#current_semester {
+	display: none
+}
+
+.course_align {
+	justify-content:right;
+}
+
+.enrollment_align {
+	justify-content:center;
+}
+
+.certification_align {
+	justify-content:left;
+}
+
+
+@media (max-width: 675px) {
+	.certification_align {
+	    justify-content:center
+	}
+
+	.course_align {
+        justify-content:center
+	}
+
+	.enrollment_align{
+	    justify-content:center
+	}
+}
+
+@media (max-width: 675px) {
+	.course_stats {
+		padding: 4% !important;
+		font-size: large;
+		font-family: Poppins;
+		font-size: 16px;
+	}
+}
+
+
+.course_stats {
+	padding: 1.5%;
+	font-family: Poppins;
+	font-size: 16px;
+	visibility: hidden;
+}
+
+.course_stats_label {
+	color: white;
+	font-family: Poppins;
+	font-size: 20px;
+	font-weight: bold;
+	visibility: hidden;
+}
+
+.words_value{
+    color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+.carousel-image {
+	width: 100%;
+	height: 500px !important
+}
+
+@media (min-width: 200px) and (max-width: 675px) {
+
+	.carousel-image {
+		width: 100%;
+		height: 300px !important
+	}
+
+	.home_search {
+		min-width: 200px;
+		right: -9% !important;
+	}
+
+	.home_search input {
+		height: 30px;
+		font-size: 16px;
+		width: 70%;
+	}
+
+	.home_search .search_keyword {
+		position: absolute;
+		top: 0px;
+		left: 60%;
+	}
+
+}
+
+@media (min-width: 1000px) and (max-width: 1100px) {
+
+	.home_search {
+		bottom: 20%;
+	}
+
+.carousel-width{
+    width : 100%;
+}
+</style>
+
+
+<section style="width:100%">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item carousel-width active">
+                <img class="carousel-image" src="../storage.googleapis.com/swayam2_central/assets/img/student.png"/>
+            </div>
+
+            <div class="item carousel-width">
+                <img class="carousel-image" src="../storage.googleapis.com/swayam2_central/assets/img/faculty.png"/>
+            </div>
+            <div class="item carousel-width">
+                <img class="carousel-image" src="../storage.googleapis.com/swayam2_central/assets/img/college.png"/>
+            </div>
+            <div class="item carousel-width notranslate">
+                <img class="carousel-image" src="../storage.googleapis.com/swayam2_central/assets/img/swayam_plus_image.png"/>
+                
+                    <a href="https://swayam-plus.swayam2.ac.in/" target="_blank">
+                          <button class="swayam_plus_button btn btn-primary-v2" type="submit" name="submit">
+                              Go to SWAYAM Plus
+                          </button>
+                        </a>
+                
+            </div>
+
+        </div>
+        <form class="form-search home_search" id="suggestive_search" action="https://swayam.gov.in/explorer" autocomplete="off">
+            <div class="form-group notranslate">
+                <input id="header-search-query" name="searchText" type="text"
+                       class="input-medium search-query"
+                       placeholder="Search SWAYAM Courses..." aria-label="Search catalog" value="">
+                <span class="search_keyword" onclick="redirectToCatalogWithSearchQuery(event)">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/icon_search_16px.png"
+                                   style="cursor:pointer; padding:5px" alt="Search icon">
+                          </span>
+            </div>
+        </form>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control hidden-xs" href="#myCarousel" data-slide="prev">
+        <span class="fa fa-chevron-left" style="position:absolute; top:60%;"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control hidden-xs" href="#myCarousel" data-slide="next">
+        <span class="fa fa-chevron-right" style="position:absolute; top:60%;"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    </div>
+
+</section>
+<div id="course-statics">
+    <div class="row statics" id="OverallSemester" style="margin: 0;">
+        <div class="container">
+            <div class="col-sm-4 col-md-4 col-xs-12 course_stats course_align" id='div_total_courses_delivered' style="display:flex;">
+                <div>Total Courses</div>
+                <div>
+                    <label class="course_stats_label" id="total_courses_delivered"></label>
+                    <label class="words_value" id="total_courses_delivered_value"></label>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-12 course_stats enrollment_align" id="div_total_enrollments" style="display:flex;">
+                <div>Total Enrollments</div>
+                <div>
+                    <label class="course_stats_label" id="total_enrollments"></label>
+                    <label class="words_value" id="total_enrollments_value"></label>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-12 course_stats certification_align" id="div_total_certified" style="display:flex;">
+                <div>Total Certifications</div>
+                <div>
+                    <label class="course_stats_label" id="total_certified"></label>
+                    <label class="words_value" id="total_certified_value"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row statics" id="current_semester" style="margin: 0;">
+        <div class="container">
+            <div class="col-sm-4 col-md-4 col-xs-12 course_stats course_align" id="div_current_sem_courses" style="display:flex;">
+                <div>Ongoing Courses</div>
+                <div>
+                    <label class="course_stats_label" id="current_sem_courses"></label>
+                    <label class="words_value" id="current_sem_courses_value"></label>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-12 course_stats enrollment_align" id="div_current_sem_enrollments" style="display:flex;">
+                <div>Ongoing Enrollments</div>
+                <div>
+                    <label class="course_stats_label" id="current_sem_enrollments"></label>
+                    <label class="words_value" id="current_sem_enrollments_value"></label>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-12 course_stats certification_align" id="div_current_sem_registration" style="display:flex;">
+                <div>Exam Registration</div>
+                <div>
+                    <label class="course_stats_label" id="current_sem_registration"></label>
+                    <label class="words_value" id="current_sem_registration_value"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../storage.googleapis.com/swayam2_central/assets/js/autocomplete/jquery-3.7.1.min.js"></script>
+<script src="../storage.googleapis.com/swayam2_central/assets/js/autocomplete/jquery-ui.min.js"></script>
+<script>
+
+//On page load fetchCount function called an
+
+$( document ).ready(function() {
+   fetchCounts();
+});
+
+
+//Semester wise statics count 5 sec timer
+
+var currentDiv = $("#OverallSemester");
+var nextDiv, count = 1;
+var myInterval = setInterval(function() {
+    if (count == 2) {
+        currentDiv.hide();
+        currentDiv = $("#OverallSemester");
+        currentDiv.show();
+        count = 1;
+    } else {
+        count++;
+        currentDiv.hide();
+        currentDiv = currentDiv.next();
+        currentDiv.show();
+    }
+}, 5000);
+
+//Ajax call for the getting the counts from backend
+  function fetchCounts() {
+      $.ajax({
+          type: "GET",
+          url: 'rest/fetch_counts',
+          dataType: 'text',
+          success: function(response) {
+              if (response) {
+                  let XSSI_PREFIX = ")]}'"
+                  let payload_data = JSON.parse(response.replace(XSSI_PREFIX, ''));
+                  if (payload_data.status == 200) {
+                      for (const [key, value] of Object.entries(payload_data.message)) {
+                          $("#" + key).text(value).css("visibility", "visible")
+                          $("#div_" + key).css("visibility", "visible")
+                      }
+                      $('.course_stats_label').each(function () {
+                        $(this).prop('Counter',0).animate({
+                            Counter: $(this).text()
+                        }, {
+                            duration: 1200,
+                            easing: 'swing',
+                            step: function (now) {
+                                $(this).text(Math.round(now*10)/10);
+                            }
+                        });
+                    });
+                  } else {
+                      $('#course-statics').hide();
+                  }
+              }
+          },
+          error: function(response) {
+              $('#course-statics').hide();
+          }
+      });
+  }
+</script>
+<script src="../storage.googleapis.com/swayam2_central/assets/js/swayam_js/course_suggestive_search.js"></script>
+</div>
+
+<!--National co-ordinator section-->
+<div class="container visible-lg visible-md" style="padding:35px 30px">
+    <div style="text-align:center;padding-bottom:20px">
+        <label style="font-size:20px">Partnered with <label style="color:blue; font-size:20px">Top Institutions</label> to produce <lable style="color:green">Best Quality Education content for Free</lable></label></div>
+  <br />
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text-center">
+    <tr>
+        
+        
+        <td class="notranslate">
+          <a href="nc_details/AICTE.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/AICTE_logo_128.png" alt="Go to AICTE" width="72px" height="72px"/>
+          </a></br>
+          AICTE
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/CEC.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/CEC-logo.png" alt="Go to CEC" width="72px" height="72px"/>
+          </a></br>
+          CEC
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/IGNOU.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/IGNOU-logo.png" alt="Go to IGNOU" width="72px" height="72px"/>
+          </a></br>
+          IGNOU
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/IIMB.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/IIMB_logo_128.png" alt="Go to IIMB" width="72px" height="72px"/>
+          </a></br>
+          IIMB
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/INI.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/INI_logo_2x.png" alt="Go to INI" width="72px" height="72px"/>
+          </a></br>
+          INI
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/NCERT.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NCERT_logo_128.png" alt="Go to NCERT" width="72px" height="72px"/>
+          </a></br>
+          NCERT
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/NIOS.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NIOS_logo_128.png" alt="Go to NIOS" width="72px" height="72px"/>
+          </a></br>
+          NIOS
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/NITTTR.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NITTTR_logo_128.png" alt="Go to NITTTR" width="72px" height="72px"/>
+          </a></br>
+          NITTTR
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/NPTEL.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NPTEL_logo_128.png" alt="Go to NPTEL" width="72px" height="72px"/>
+          </a></br>
+          NPTEL
+        </td>
+        
+        <td class="notranslate">
+          <a href="nc_details/UGC.html">
+              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/UGC_logo_128.png" alt="Go to UGC" width="72px" height="72px"/>
+          </a></br>
+          UGC
+        </td>
+        
+        
+    </tr>
+  </table>
+</div>
+
+<!--National co-ordinator section for mobile view-->
+<div class="container visible-sm visible-xs section-margin">
+  <div style="text-align:center;padding-bottom:20px">
+        <label style="font-size:20px">Partnered with <label style="color:blue; font-size:20px">Top Institutions</label> to produce <lable style="color:green">Best Quality Education content for Free</lable></label></div>
+  <br />
+  <div id="about-slider">
+    <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner notranslate">
+          
+          
+            
+                <div class="item active">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text-center">
+                    <tr>
+                        
+                        <td>
+                          <a href="nc_details/AICTE.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/AICTE_logo_128.png" alt="Go to AICTE" width="72px" height="72px"/>
+                          </a></br>
+                          AICTE
+                        </td>
+                        
+                        <td>
+                          <a href="nc_details/CEC.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/CEC-logo.png" alt="Go to CEC" width="72px" height="72px"/>
+                          </a></br>
+                          CEC
+                        </td>
+                        
+                        <td>
+                          <a href="nc_details/IGNOU.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/IGNOU-logo.png" alt="Go to IGNOU" width="72px" height="72px"/>
+                          </a></br>
+                          IGNOU
+                        </td>
+                        
+                    </tr>
+                  </table>
+                </div>
+            
+          
+            
+                <div class="item">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text-center">
+                    <tr>
+                        
+                        <td>
+                          <a href="nc_details/IIMB.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/IIMB_logo_128.png" alt="Go to IIMB" width="72px" height="72px"/>
+                          </a></br>
+                          IIMB
+                        </td>
+                        
+                        <td>
+                          <a href="nc_details/INI.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/INI_logo_2x.png" alt="Go to INI" width="72px" height="72px"/>
+                          </a></br>
+                          INI
+                        </td>
+                        
+                        <td>
+                          <a href="nc_details/NCERT.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NCERT_logo_128.png" alt="Go to NCERT" width="72px" height="72px"/>
+                          </a></br>
+                          NCERT
+                        </td>
+                        
+                    </tr>
+                  </table>
+                </div>
+            
+          
+            
+                <div class="item">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text-center">
+                    <tr>
+                        
+                        <td>
+                          <a href="nc_details/NIOS.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NIOS_logo_128.png" alt="Go to NIOS" width="72px" height="72px"/>
+                          </a></br>
+                          NIOS
+                        </td>
+                        
+                        <td>
+                          <a href="nc_details/NITTTR.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NITTTR_logo_128.png" alt="Go to NITTTR" width="72px" height="72px"/>
+                          </a></br>
+                          NITTTR
+                        </td>
+                        
+                        <td>
+                          <a href="nc_details/NPTEL.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NPTEL_logo_128.png" alt="Go to NPTEL" width="72px" height="72px"/>
+                          </a></br>
+                          NPTEL
+                        </td>
+                        
+                    </tr>
+                  </table>
+                </div>
+            
+          
+            
+                <div class="item">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text-center">
+                    <tr>
+                        
+                        <td>
+                          <a href="nc_details/UGC.html">
+                              <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/UGC_logo_128.png" alt="Go to UGC" width="72px" height="72px"/>
+                          </a></br>
+                          UGC
+                        </td>
+                        
+                    </tr>
+                  </table>
+                </div>
+            
+          
+          
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+<!--Why swayam section -->
+<div class="row" style="background: #ededed;margin: 0;">
+    <div class="container section-margin">
+        <div class="heading-text notranslate"> Why SWAYAM ?</div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="homecard">
+                <div class="image">
+                    <img src="../storage.googleapis.com/swayam2_central/assets/img/IITM_ICON_University_Credits.png" width="92px"
+                         height="92px"/>
+                </div>
+                <div class="home-content">
+                    <div class="title">Free Course from Top Universities</div>
+                    <div class="description">Find Free courses from the Best Universities</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="homecard">
+                <div class="image">
+                    <img src="../storage.googleapis.com/swayam2_central/assets/img/IITM_ICON_Self_paced.png" width="92px" height="92px"/>
+                </div>
+                <div class="home-content">
+                    <div class="title">Self-Paced Learning</div>
+                    <div class="description">Learn at your own pace, Anytime, Anywhere</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="homecard">
+                <div class="image">
+                    <img src="../storage.googleapis.com/swayam2_central/assets/img/IITM_ICON_earn_certifications.png" width="92px"
+                         height="92px"/>
+                </div>
+                <div class="home-content">
+                    <div class="title">Earn Certifications</div>
+                    <div class="description">Earn Certifications and Recognition from the Top Universities</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="homecard">
+                <div class="image">
+                    <img src="../storage.googleapis.com/swayam2_central/assets/img/IITM_ICON_Top_Universities.png" width="92px" height="92px"
+                         />
+                </div>
+                <div class="home-content">
+                    <div class="title">Get University Credits</div>
+                    <div class="description">Earn University Credits and get them transferred to your degree</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+<!--Explore Courses section -->
+<div class="container notranslate">
+    <div class="explore-course-text">Explore Courses</div>
+    <div class="row">
+        <div class="col-md-12" id="popular_courses">
+        </div>
+    </div>
+    <div class="row">
+        <a href="explorer.html">
+        <div class="pull-right mv-view-all-course" style="margin:2% 2% 0%;">View All Courses<i class="fa fa-angle-right" style="margin-left:5px;font-size:larger"></i></div>
+            </a>
+    </div>
+</div>
+
+<!--Tetimonial section -->
+
+    <div class="container section-margin notranslate">
+        <div class="row testimonial-carousel-row">
+            <div class="col-md-4 col-xs-12">
+                <div class="card" style="padding: 5%;">
+                    <img style="height: 12rem;width: 12rem;border-radius: 5rem;"
+                         src="../storage.googleapis.com/swayam2_central/assets/img/testimonial_200px.png" class="card-img-top">
+                    <div class="card-body" style="padding: 20% 5% 10% 5%;">
+                        <div style="padding-bottom:1%">
+                    <span style="font-size: 22px;font-weight: bold;color:black">
+                      Hear from our Achievers
+                    </span>
+                        </div>
+                        <p class="card-text">SWAYAM courses have been empowering learners in multiple ways. Hear
+                            directly from our achievers on how courses have impacted them.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-xs-12 mv-padding-top0" style="padding-top:10%">
+                <div id="testimonial" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#testimonial" data-slide-to="0" class="active"></li>
+                        <li data-target="#testimonial" data-slide-to="1"></li>
+                    </ol>
+
+                    <!-- Mobile View  -->
+                    <div id="mv-carousel-items-wrap" class="carousel-inner mv-display">
+                        
+                            <div class="item mv-carousel-item">
+                                <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                    <div class="testimonial-carousel-body">
+                                        <div class="testimonial-img">
+                                            <img style="    width: 20rem;
+                                                    height: 20rem;
+                                                    border-radius: 10rem;"
+                                                 src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/kuheli_biswas.png" class="card-img-top"
+                                            >
+                                        </div>
+                                        <div class="card-body testemonial-card-body">
+                                            <div>
+                                                <p class="card-text">
+                                                    Excellent Course on Developing Soft Skills And Personality, By Prof. T. Ravichandran from IIT Kanpur. The course provided in-depth knowledge and understanding about various aspects of soft skills that are vital to the overall personality development of an individual. Soft skills and personality development are very important for professional well-being in the work environment.
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="testimonial-name">Dr. Kuheli Biswas Das</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="item mv-carousel-item">
+                                <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                    <div class="testimonial-carousel-body">
+                                        <div class="testimonial-img">
+                                            <img style="    width: 20rem;
+                                                    height: 20rem;
+                                                    border-radius: 10rem;"
+                                                 src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/riya_raj.png" class="card-img-top"
+                                            >
+                                        </div>
+                                        <div class="card-body testemonial-card-body">
+                                            <div>
+                                                <p class="card-text">
+                                                    I would like to thank the NPTEL team for giving me such an opportunity to share my story. I had registered myself for an introduction to biostatistics through the NPTEL Swayam portal as part of my course curriculum, which was conducted by Professor Shamik Sen from IIT Bombay. It was a really great experience of online learning from Professor Shamik. From here, I learned how statistics are used ...
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="testimonial-name">Riya Raj</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="item mv-carousel-item">
+                                <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                    <div class="testimonial-carousel-body">
+                                        <div class="testimonial-img">
+                                            <img style="    width: 20rem;
+                                                    height: 20rem;
+                                                    border-radius: 10rem;"
+                                                 src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/Pamir_Roy.jpg" class="card-img-top"
+                                            >
+                                        </div>
+                                        <div class="card-body testemonial-card-body">
+                                            <div>
+                                                <p class="card-text">
+                                                    Basically I don&#39;t see much of a difference between regular classes and online learning. I look at online learning as new way of the 21st century
+NPTEL courses are enhancing learning thru technology. The Discussion forum has been a great help as most questions that I had already been discussed there.
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="testimonial-name">Pamir Roy</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="item mv-carousel-item">
+                                <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                    <div class="testimonial-carousel-body">
+                                        <div class="testimonial-img">
+                                            <img style="    width: 20rem;
+                                                    height: 20rem;
+                                                    border-radius: 10rem;"
+                                                 src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/rohit_joshi.png" class="card-img-top"
+                                            >
+                                        </div>
+                                        <div class="card-body testemonial-card-body">
+                                            <div>
+                                                <p class="card-text">
+                                                    The Project Management course I recently completed was a valuable learning experience. The course provided a comprehensive overview of project management principles and techniques, equipping me with a solid foundation to plan, execute, and control projects effectively. The instructor&#39;s expertise and engaging teaching style made the learning process enjoyable and interactive. Furthermore, the co...
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="testimonial-name">Rohit Joshi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                    <!-- Desktop View  -->
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner dv-display">
+                        <div class="item active">
+                            <div id="item" class="row">
+                                
+                                <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                    <div class="testimonial-carousel-body">
+                                        <div class="testimonial-img">
+                                            <img
+                                                    src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/kuheli_biswas.png" class="card-img-top"
+                                            >
+                                        </div>
+                                        <div class="card-body testemonial-card-body">
+                                            <div>
+                                                <p class="card-text">
+                                                    Excellent Course on Developing Soft Skills And Personality, By Prof. T. Ravichandran from IIT Kanpur. The course provided in-depth knowledge and understanding about various aspects of soft skills that are vital to the overall personality development of an individual. Soft skills and personality development are very important for professional well-being in the work environment.
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="testimonial-name">Dr. Kuheli Biswas Das</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                    <div class="testimonial-carousel-body">
+                                        <div class="testimonial-img">
+                                            <img
+                                                    src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/riya_raj.png" class="card-img-top"
+                                            >
+                                        </div>
+                                        <div class="card-body testemonial-card-body">
+                                            <div>
+                                                <p class="card-text">
+                                                    I would like to thank the NPTEL team for giving me such an opportunity to share my story. I had registered myself for an introduction to biostatistics through the NPTEL Swayam portal as part of my course curriculum, which was conducted by Professor Shamik Sen from IIT Bombay. It was a really great experience of online learning from Professor Shamik. From here, I learned how statistics are used ...
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span class="testimonial-name">Riya Raj</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div id="item" class="row">
+                                
+                                    <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                        <div class="testimonial-carousel-body">
+                                            <div class="testimonial-img">
+                                                <img
+                                                        src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/Pamir_Roy.jpg" class="card-img-top"
+                                                >
+                                            </div>
+                                            <div class="card-body testemonial-card-body">
+                                                <div>
+                                                    <p class="card-text">
+                                                        Basically I don&#39;t see much of a difference between regular classes and online learning. I look at online learning as new way of the 21st century
+NPTEL courses are enhancing learning thru technology. The Discussion forum has been a great help as most questions that I had already been discussed there.
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <span class="testimonial-name">Pamir Roy</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-sm-6 col-md-6 testimonial-carousel-cards">
+                                        <div class="testimonial-carousel-body">
+                                            <div class="testimonial-img">
+                                                <img
+                                                        src="../storage.googleapis.com/swayam-central-production.appspot.com/Testimonials/rohit_joshi.png" class="card-img-top"
+                                                >
+                                            </div>
+                                            <div class="card-body testemonial-card-body">
+                                                <div>
+                                                    <p class="card-text">
+                                                        The Project Management course I recently completed was a valuable learning experience. The course provided a comprehensive overview of project management principles and techniques, equipping me with a solid foundation to plan, execute, and control projects effectively. The instructor&#39;s expertise and engaging teaching style made the learning process enjoyable and interactive. Furthermore, the co...
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <span class="testimonial-name">Rohit Joshi</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control mv-display" href="#testimonial" data-slide="prev">
+                    <span class="fa fa-chevron-left" style="position:absolute; top:60%;color: black;"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#testimonial" data-slide="next">
+                    <span class="fa fa-chevron-right" style="position:absolute; top:60%;color: black;"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+<style>
+.explore-course-text {
+	font-size: 24px;
+	font-weight: bold;
+	padding: 2% 1%;
+}
+
+.section-margin {
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+.homecard .image {
+	min-height: 128px;
+	position: relative;
+}
+
+.homecard .image img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.homecard .home-content {
+	height: 136px;
+	padding: 5px 25px;
+	text-align: center;
+}
+
+.homecard .home-content .title {
+	font-size: 18px;
+	color: #333333;
+	font-weight: 600;
+}
+
+.homecard .home-content .description {
+	font-size: 12px;
+	color: #666666;
+	padding: 3% 0%
+}
+
+.heading-text {
+	text-align: center;
+	font-size: 24px;
+	padding: 24px;
+	font-weight: bold;
+}
+
+.testimonial-carousel-cards {
+	padding: 1% 3% 1% 3%
+}
+
+.testimonial-carousel-body {
+	padding: 1%;
+	background: rgb(237, 237, 237);
+	border-radius: 3.5rem;
+	box-shadow: 0 0 2px 2px #ccc;
+	height: 504px
+}
+
+.testimonial-img {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	"
+
+}
+
+.testimonial-img img {
+	width: 20rem;
+	height: 20rem;
+	border-radius: 10rem;
+}
+
+.testemonial-card-body {
+	padding-top: 8%;
+}
+
+.testimonial-name {
+	font-size: 16px;
+	font-weight: 600;
+	color: black;
+}
+
+.testimonial_subtitle {
+	color: #0aaa7a;
+	font-size: 12px;
+}
+
+.testimonial_btn {
+	background-color: #373d4b !important;
+	color: #fff !important;
+}
+
+.seprator {
+	height: 2px;
+	width: 56px;
+	background-color: #0aaa7a;
+	margin: 7px 0 10px 0;
+}
+
+.testemonial-card-body {
+	padding: 2rem;
+}
+
+.mv-home-page-container {
+	padding: 0;
+	margin: 8% 0 0 0;
+	width: 100%;
+}
+
+.testimonial-carousel-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.mv-display {
+	display: none;
+}
+
+.dv-display {
+	display: block;
+}
+
+.explorer-card {
+	width: 100%;
+}
+
+
+@media (min-width: 200px) and (max-width: 675px) {
+
+
+	.mv-home-page-container {
+		margin: 55% 0 0 0;
+	}
+
+	.tab-content>.active {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+
+	.testimonial-carousel-row {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.mv-padding-top0 {
+		padding-top: 0 !important;
+	}
+
+	.mv-display {
+		display: block;
+	}
+
+	.dv-display {
+		display: none;
+	}
+
+	.carousel-control,
+	.carousel-control.right,
+	.carousel-control.left {
+		width: 15%;
+	}
+
+
+}
+
+/* windows scale 150 zoom 110 -- exceptional  */
+@media (min-width: 1100px) and (max-width: 1240px) {
+	/* .col-md-8{
+        width: 60%;
+      } */
+
+@media (min-width: 200px) and (max-width: 600px){
+  .mv-close-btn{
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+  right: 0.5% !important;
+  top: -8.5% !important;
+}
+
+.modal_mobile{
+    width: 75% !important;
+}
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+//Onpage load Ajax call to get popular courses
+$(document).ready(function() {
+    $.ajax({
+        type: "POST",
+        url: '/popular_courses',
+        contentType: false,
+        cache: false,
+        dataType: 'text',
+        processData: false,
+        success: function(response) {
+            let XSSI_PREFIX = ")]}'";
+            let result = JSON.parse(response.replace(XSSI_PREFIX, ''));
+
+            if (result.status == 200) {
+                let payload = JSON.parse(result['payload'])
+                $('#popular_courses').empty();
+                $("#popular_courses").html(payload['template']);
+            } else {
+                $('#popular_courses').hide();
+            }
+        },
+        error: function(response) {
+            $('#popular_courses').hide();
+        },
+    });
+});
+
+//Mobile responsive for testimonial
+document.addEventListener("DOMContentLoaded", function() {
+
+    let mv_car_ele = document.getElementById("mv-carousel-items-wrap")
+    const availWidth = window.screen.availWidth
+    if (mv_car_ele && availWidth > 900) {
+        mv_car_ele.remove()
+    }
+
+    const cardEles = document.getElementsByClassName("mv-carousel-item")
+    let firstEle
+    if (cardEles && cardEles.length > 0) {
+        firstEle = cardEles[0]
+        firstEle.classList.add("active")
+    }
+});
+</script>
+<section class="main" style="position:inherit;">
+<section id="social">
+  <div class="container">
+
+      <div class="row appcontainer">
+        <!--<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding-top:12px"> <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/social_GOI.jpg" /> </div>-->
+        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+          <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/mhrd_logo.png" alt="Ministry of Education logo"  style="margin-top:18px;" />
+          <img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/swayam_logo.png" alt="Swayam logo" style="margin-top: 12px;margin-left: 20px;" />
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12" style="font-size:11px; color:#666666; line-height:14px;">
+        <h4>DOWNLOAD APP</h4>
+        <!--<div><a href="https://itunes.apple.com/in/app/swayam-online-education/id1146833429?mt=8"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/download_app_store_logo.png" /></a></div>-->
+        <div><a href="https://play.google.com/store/apps/details?id=in.gov.swayam.app"><img src="../storage.googleapis.com/swayam2_central/assets/img/swayam_images/download_google_play_logo.png" alt="Go to Google play" /></a></div>
+        <!--<div><a href="https://www.microsoft.com/en-in/store/p/swayam/9nblggh4xxml"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/download_windows_store_logo.png" /></a></div>-->
+
+         </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-7 col-xs-12 notranslate">
+          <h4>FOLLOW US</h4>
+          <!--<img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/social.jpg" />-->
+          <ul class="social_icons">
+            <li><a href="../www.facebook.com/swayammoocs/index.html"><img src="../storage.googleapis.com/swayam2_central/assets/images/icon_social/facebook_icon.png" width="35px" alt="Go to Facebook" class="facebook"/></a></li>
+            <li><a href="https://www.instagram.com/swayammhrd/"><img src="../storage.googleapis.com/swayam2_central/assets/images/icon_social/instagram_icon.png" width="35px" alt="Go to Instagram" class="instagram"/></a></li>
+            <!--<li><a href="#"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/icon_social/icon_linkedin_selected.png" class="linkedin"/></a></li>-->
+            <li><a href="https://twitter.com/SWAYAMMHRD"><img src="../storage.googleapis.com/swayam2_central/assets/images/icon_social/twitter_icon.png" width="35px" alt="Go to Twitter" class="twitter"/></a></li>
+            <!--<li><a href="#"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/icon_social/icon_youtube_selected.png" class="youtube"/></a></li>-->
+          </ul>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<section id="legal">
+  <div class="container">
+
+  <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+
+  <a href="privacy_policy.html">Privacy Policy</a>   <span>|</span>   <a href="terms_of_use.html">Terms of Use</a>   <span>|</span>   <a href="honor_code.html">Honor Code</a> <span style="display:none">|</span>   <a href="#" style="display:none">FAQs</a></div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12 helpline">   <a href="#" onClick="email_form()" id="support_popup"><span class="notranslate"> SWAYAM </span> Helpline / Support</a> </div>
+
+  </div>
+  </div>
+</section>
+<!--/#bottom-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6"> &copy; 2024 <span class="notranslate"> SWAYAM </span>. All rights reserved. </div>
+      <div class="col-sm-6">
+        <div class="pull-right"> Initiative by : Ministry of Education (Govt of India) </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/#footer-->
+<!--Popup form for support-->
+
+<div class="pop_up_container notranslate">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" style="color: #FFFFFF;opacity: 1;" data-dismiss="modal" type="button">&times;</button>
+                    <h4 class="modal-title" style="color:#FFFFFF;font-size: 20px">SWAYAM SUPPORT</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <p style="font-size: 20px">Please choose the SWAYAM National Coordinator for support.<span class="text-danger">*</span> :</p>
+                        <select id="nc_email" onchange="display_nc_email()">
+                            <option disabled selected>select</option>
+                            <option value="cecmoocs.nc@gmail.com">CEC</option>
+                            <option value="iimbswayam@iimb.ac.in">IIMB</option>
+                            <option value="swayam.ignou@ignouonline.ac.in">IGNOU</option>
+                            <option value="nmcncert@ciet.nic.in">NCERT</option>
+                            <option value="SWAYAM@NITTTRC.EDU.IN">NITTTR</option>
+                            <option value="swayam@nios.ac.in">NIOS</option>
+                            <option value="aicteswayam@aicte-india.org">AICTE</option>
+                            <option value="support@nptel.iitm.ac.in">NPTEL</option>
+                        </select>
+                        <br> <br>
+                        <div id="nc_email_text" style="font-size: 18px;margin-left: -20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.modal-content > .modal-header {
+   background:#003366;
+}
+.modal-dialog {
+    width: 800px;
+}
+</style>
+
+<script>
+function email_form(){
+    try{
+        $("#myModal").modal('show');
+    }catch(e){
+        jQuery.noConflict();
+        $("#myModal").modal('show');
+    }
+
+}
+function display_nc_email(){
+    document.getElementById("nc_email_text").innerHTML = "Please send an email to <b>" + document.getElementById("nc_email").value + "</b> regarding your queries / issues";
+}
+</script>
+</section>
+<style>
+  .main{
+   bottom: 0px;
+   width: 100%;
+   }
+   @media (max-width: 767px) {
+   body{
+   padding-bottom: 400px;
+   }
+   }
+   @media (min-width: 768px) and (max-width: 991px) {
+   body{
+   padding-bottom: 240px;
+   }
+   }
+   @media (min-width: 992px) {
+   body{
+   padding-bottom: 175px;
+   }
+   }
+
+</style>
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+$(document).ready(function() {
+
+  $(".CheckboxContainer .container").click(function(){
+
+      $("input[type='checkbox']").click(function(e){
+
+          $div = $(this).parent();
+          text = $div[0].firstChild.nodeValue;
+          id_text = text.replace(/\s+/g, "");
+          id_text = id_text.replace("&", "_");
+
+          if($(this).prop("checked") == true){
+            $(".sf-filtertags ul").prepend("<li>"+text+"<a href='#' name='"+text+"' id='"+id_text+"' onclick='removeTagAndUncheck(this.id,this.name)'> X </a></li>");
+          }
+          else{
+            $("#"+id_text).parent().remove();
+          }
+
+          clearAllShowHide();
+          e.stopImmediatePropagation();
+        });
+    });
+
+    $('.dropdown-submenu a.submenu').on("click", function(e){
+        $.each($(".dropdown-submenu div.dropdown-menu"), function(){
+            if($(this).is(":visible")) {
+                if( $( "div" ).index( $(this).parent() ) != $( "div" ).index( $(e.target).next('div.dropdown-menu').parent() ) ){
+                    $(this).css("display","none");
+                    $(this).parent().find("i").removeClass("fa-angle-right");
+                    $(this).parent().find("i").addClass("fa-angle-down");
+                }
+            }
+        });
+
+        $(e.target).next('div').toggle();
+
+        if(($(e.target).next('div')).is( ":visible" )){
+            $(e.target).find("i").removeClass("fa-angle-down");
+            $(e.target).find("i").addClass("fa-angle-right");
+        }
+        else{
+            $(e.target).find("i").removeClass("fa-angle-right");
+            $(e.target).find("i").addClass("fa-angle-down");
+        }
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
+    $(".dropdown").on("show.bs.dropdown", function(event){
+        $( event.target).find("div.dropdown-menu").css("display","table") ;
+        $(event.target).find("i").removeClass("fa-angle-right");
+        $(event.target).find("i").addClass("fa-angle-down");
+    });
+    $(".dropdown").on("shown.bs.dropdown", function(){
+        $('.dropdown-submenu a.submenu').next('div').toggle();
+    });
+    $(".dropdown").on("hide.bs.dropdown", function(event){
+        $( event.target).find("div.dropdown-menu").css("display","none") ;
+    });
+});
+
+function clearAllShowHide(){
+  if ( $('.sf-filtertags ul li').length > 2 ) {
+    $("#clearAllTags").css("visibility","visible");
+  }else{
+    $("#clearAllTags").css("visibility","hidden");
+  }
+}
+
+function removeTagAndUncheck(id, name){
+  $("input[name='"+name.trim()+"']:checkbox").prop('checked', false);
+  $("#"+id).parent().remove();
+  clearAllShowHide();
+}
+
+function clearAllTags(){
+  $('.sf-filtertags ul').empty();
+  $('.sf-filtertags ul').prepend('<li id="clearAllTags" style="border:none;visibility: hidden;" onclick="clearAllTags()"><a href="#">Clear All</a></li>');
+  $('input:checkbox').removeAttr('checked');
+  clearAllShowHide();
+}
+
+//Hide Dropdown popover on out-focus
+$(document).on("focusin", function(event){
+    var $trigger = $(".dropdown");
+    if($trigger !== event.target && !$trigger.has(event.target).length){
+        $(".dropdown-menu").slideUp("fast");
+    }
+});
+
+$(window).click(function() {
+    $(".dropdown-menu").slideUp("fast");
+});
+</script>
+
+<script>
+$('a').click(function(){
+    if($(this).text().trim() == 'Show More' ){
+        $(this).html('Show Less <i class="fa fa-chevron-up"></i>');
+    }
+    else if($(this).text().trim() == 'Show Less' ){
+         $(this).html('Show More <i class="fa fa-chevron-down"></i>');
+    }
+});
+</script>
+</body>
+
+<!-- Mirrored from swayam.gov.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 07:38:13 GMT -->
+</html>
+
+

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from swayam.gov.in/terms_of_use by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 08:07:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WCQT3YNG8C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               gtag('config', 'G-WCQT3YNG8C');
+    </script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title class="notranslate">Swayam Central</title>
+<!-- Swayam CSS -->
+<link rel="icon" href="https://storage.googleapis.com/swayam2_central/assets/img/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="152x152" href="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/180x180.png">
+<link rel="icon" type="image/png" sizes="196x196" href="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/ico/196x196.png">
+<link href="https://storage.googleapis.com/swayam2_central/assets/css/swayam_css/bootstrap.min.css" rel="stylesheet">
+<link href="https://storage.googleapis.com/swayam2_central/assets/css/swayam_css/main.css" rel="stylesheet">
+<link href="https://storage.googleapis.com/swayam2_central/assets/css/swayam_css/header_css.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Restrict CSS/JS loading from external CDN. Reverting to cloudflare as its not working from our CDN. Check this later -->
+<!--link rel="stylesheet" href="https://storage.googleapis.com/swayam2_central/assets/css/swayam_css/font-awesome.min.css" -->
+<style>
+.goog-te-combo {
+	display: inline-block;
+	position: relative;
+	width: 47px;
+	/* Set the width of your image */
+	height: 22px;
+	/* Set the height of your image */
+	background: url("https://storage.googleapis.com/swayam2_central/assets/img/languages.svg");
+	/* Set the image path */
+	background-size: cover;
+	/* Adjust image sizing */
+	cursor: pointer;
+	border: unset;
+	background-color: transparent;
+    color: transparent;
+}
+</style>
+
+<!-- Swayam JS -->
+<script src="https://storage.googleapis.com/swayam2_central/assets/js/swayam_js/jquery.js"></script>
+<script src="https://storage.googleapis.com/swayam2_central/assets/js/swayam_js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var idleTime = 0;
+var current_user_email = 'None';
+$(document).ready(function () {
+    //home page modal triggered here based on session storage check
+    let popUpFlagVal = sessionStorage.getItem("popUpFlag");
+    if(popUpFlagVal !== "true" || popUpFlagVal === "undefined"){
+     
+        //     $("#homePageModal").modal({
+        //     show: true,
+        //     backdrop: 'static',
+        //     keyboard: false
+        // });
+     
+ 
+        sessionStorage.setItem("popUpFlag", "true");
+    }
+    //Increment the idle time counter every minute.
+    var currentUserEmail = 'None'
+
+    if (currentUserEmail != "None"){
+       var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+    }
+
+
+    //Zero the idle timer on mouse movement.
+    $(this).mousemove(function (e) {
+        idleTime = 0;
+    });
+    $(this).keypress(function (e) {
+        idleTime = 0;
+    });
+});
+
+function timerIncrement() {
+    idleTime = idleTime + 1;
+
+    if (idleTime > 119) { // 120 minutes
+        window.location.replace("https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/logout?post_logout_redirect_uri=https://swayam.gov.in/wso_logout");
+    }
+}
+</script>
+</head>
+<body class="homepage HeaderMargin">
+<div class="container">
+    <div class="modal fade notranslate" id="ConfirmPopupModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-body">
+                <div class="pop_up_container">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" style="color: #fff ;opacity: 1;" data-dismiss="modal" type="button">&times;</button>
+                            <h4 id="popup-title" class="modal-title" style="color:#fff ;font-size: 20px;text-align: left;"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="popup-question" style="font-size: 20px; padding-bottom: 10px"></p>
+                            <a id="popup-link" target="newWin">
+                                <button class="btn" onclick="close_modal();">Continue</button>
+                            </a>
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.modal-dialog {
+    width: 800px;
+}
+@media (max-width: 768px) {
+  .modal-dialog.modal-sm {
+    width: 300px;
+    margin: 30px auto;
+  }
+}
+</style>
+
+<script>
+function redirect_confirmation(title, text, link) {
+    $("#popup-title").text(title);
+    $("#popup-question").text(text);
+    $("#popup-link").attr('href', link);
+    return false; // To avoid refreshing page
+}
+
+function close_modal() {
+    $(".close").click();
+}
+</script>
+<header id="header">
+  <!--Top Bar [START]-->
+    <div class="row" style="background: #003987">
+        <div class="container">
+            <div style="width: 100%; height: 100%;">
+                <div class="top-section">
+                    An initiative by Ministry of Education (Govt. of India)
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="container modified-container notranslate">
+    <div class="row display-flex-space-btn" style="padding:8px">
+      <div class="col-2 custome-width header_align mv-swayam-image-wrap" style="--w:12%">
+          <a href="https://swayam.gov.in/" class="mv-swayam-logo">
+        <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_logo.png" alt="swayam-logo" class="mv-swayam-image" style="max-width:85% !important">
+              </a>
+
+          <!-- MobileView Sign Register BTn  -->
+          
+              <li>
+                  <a href=https://swayam.gov.in/wso?redirect=/ style="padding-top:0px;" tabindex="-1" class="mv-btn-tag">
+                      <button type="submit" name="submit" class="btn btn-primary-v2 mv-signin-btn mv-display"
+                              style="margin: 0px;">
+                          Sign-In / Register
+                      </button>
+                  </a>
+              </li>
+          
+
+      </div>
+      <div class="col-8 custome-width header_align" style="padding:8px;">
+
+          <!-- <div class="navbar-header"> -->
+              <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                      data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+          </div> -->
+          <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+              <div class="HeaderBanner" style="margin-top:10px">
+                  <a href="https://swayam.gov.in/about">About Swayam</a>|
+                  <a href="https://swayam.gov.in/explorer">All Courses</a>|
+                  <a href="https://swayam.gov.in/nc_details/">National Coordinator</a>|
+                  <a href="https://nptel.ac.in/LocalChapter/" data-toggle="modal" data-target="#ConfirmPopupModal"
+                     onClick="return redirect_confirmation('LOCAL CHAPTERS', 'You are being redirected to a different site. Do you want to continue?',
+                    'https://nptel.ac.in/LocalChapter/');">Local Chapters</a> |
+                  <a href="https://swayam.gov.in/faq">FAQ</a> |
+                  
+                      <a href="https://swayam-plus.swayam2.ac.in/" data-toggle="modal" data-target="#ConfirmPopupModal"
+                         onClick="return redirect_confirmation('SWAYAM PLUS', 'You are being redirected to a different site. Do you want to continue?',
+                            'https://swayam-plus.swayam2.ac.in/');">Swayam Plus
+                      </a>|
+                  
+                  
+                      <div class="dropdown" style="display:inline">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                  onclick="toggle_dropdownmenu('announcement_dropdown-menu');" data-toggle="dropdown" aria-haspopup="true"
+                                  aria-expanded="false" style="font-weight:bold">
+                              <img src="https://storage.googleapis.com/swayam2_central/assets/img/annocement.png" height="20px" width="20px">
+                              <i class="fa fa-angle-down"></i>
+                          </button>
+
+                          <ul id="announcement_dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="text-align:left;width:175%;min-width:200px;">
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://exams.nta.ac.in/swayam" target="_blank" style="max-width: 300px; white-space: initial;">Exam registration dates extended for SWAYAM till 28th April</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://sites.google.com/nptel.iitm.ac.in/help-center-swayamnpteltrans/home" target="_blank" style="max-width: 300px; white-space: initial;">SWAYAM Courses in Regional languages</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://exams.nta.ac.in/swayam/images/SWAYAM-12-PN.pdf" target="_blank" style="max-width: 300px; white-space: initial;">Revised dates for SWAYAM January 2024 Semester Exams are 18th, 19th, 26th &amp; 27th May 2024</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://docs.google.com/document/d/e/2PACX-1vQ5AWX8_3OxNEKGU93uHlV9SwAZvqojmujUQYNbWKpOWpl0SldzKXUiOLSeWq6iiw/pub" target="_blank" style="max-width: 300px; white-space: initial;">Launch of राष्ट्रीय e-पुस्तकालय  (Rashtriya e-Pustakalaya) Mobile application</a></li>
+                              
+                                  <li class="dropdown-divider" style="border-bottom:1px solid #ff8811"><a href="https://exams.nta.ac.in/swayam" target="_blank" style="max-width: 300px; white-space: initial;">Confirmation on exam dates for upcoming July-2024 semester</a></li>
+                              
+                          </ul>
+                      </div>
+                  
+                  <div id="google_translate_element" style="display:inline-flex;height:33px"></div>
+                  <!-- Asynchronous Google Translate load -->
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                              new google.translate.TranslateElement({
+                                pageLanguage: 'en',
+                                includedLanguages: 'en,hi,bn,gu,ml,mr,kn,ta,te'
+                              },
+                              'google_translate_element');
+                            }
+                            var googleTranslateScript = document.createElement('script');
+                            googleTranslateScript.type = 'text/javascript';
+                            googleTranslateScript.async = true;
+                            googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(googleTranslateScript);
+                        </script>
+                  <!-- End script Asynchronous Google Translate load -->
+              </div>
+          <!-- </div> -->
+      </div>
+      <div class="col-2 custome-width header_align web-display" style="padding-top:10px;--w:15%">
+          
+        <li>
+          <a href=https://swayam.gov.in/wso?redirect=/ style="padding-top:0px;" tabindex="-1">
+            <button type="submit" name="submit" class="btn btn-primary-v2 dv-hide" style="margin: 0px;font-size: 11px;">
+                Sign-In / Register
+            </button>
+          </a>
+        </li>
+
+           
+
+    </div>
+      </div>
+  </div>
+
+</header>
+<div id="back-to-top" style="bottom: 20px;right: 20px;position: fixed;display: none;z-index: 1" onclick="topFunction()">
+  <img src="https://storage.googleapis.com/swayam2_central/assets/img/Up_arrow_48.png">
+</div>
+
+<script>
+  function redirectToCatalogWithSearchQuery(event) {
+      // Proceed only if user clicks on Search icon
+      if (event.type == "click") {
+          document.location = "/explorer?searchText=" + document.getElementById('header-search-query').value;
+      }
+  }
+  backtotop = document.getElementById("back-to-top");
+
+  window.onscroll = function() {
+      scrollFunction()
+  };
+
+  function scrollFunction() {
+      let threshold_pixel_value = 100;
+      if (document.body.scrollTop > threshold_pixel_value || document.documentElement.scrollTop > threshold_pixel_value) {
+          backtotop.style.display = "block";
+      } else {
+          backtotop.style.display = "none";
+      }
+  }
+
+  function topFunction() {
+      $(window).scrollTop(0);
+  }
+
+  function toggle_dropdownmenu(ul_id){
+     const menuHeight = $('#' + ul_id).outerHeight();
+     $('#' + ul_id).toggle();
+     $('#' + ul_id).css('min-height', menuHeight);
+  }
+</script>
+<!--Breadcrumb [START]-->
+<div class="bccontainer">
+   <div class="container breadcrumb">
+      <div> <a href="https://swayam.gov.in/">Home</a> > <a href="#">Terms of Use</a></div>
+      <div class="public_header">SWAYAM Terms of Use</div>
+      <div class="marginTop25 boxMarginBottom">SWAYAM is a programme initiated by the Government of India and designed to achieve the three cardinal principles of Education Policy viz., access, equity and quality. The objective of this effort is to take the best teaching learning resources to all, including the most disadvantaged. SWAYAM seeks to bridge the digital divide for students who have hitherto remained untouched by the digital revolution and have not been able to join the mainstream of the knowledge economy..</div>
+   </div>
+</div>
+<div class="container" style="margin-bottom: 32px;">
+   <div class="row">
+      <div class="col-xs-12">
+         <h4>Welcome to SWAYAM.</h4>
+         <p>Please read these Terms of Use ("TOU") prior to registering for
+            an account on swayam.gov.in or using any portion of the SWAYAM
+            website or mobile applications (collectively, the “SWAYAM Site,"
+            which consists of all content and pages located within the swayam.gov.in
+            web domain and all SWAYAM mobile applications), including accessing any
+            course material, chat rooms, or other electronic services.
+         </p>
+         <p>These TOU that follow are agreements (the "Agreements") between you
+            and SWAYAM. By using the SWAYAM Site, you accept and agree to be legally
+            bound by the Agreements, whether or not you are a registered user.
+         </p>
+         <p>SWAYAM reserves the right to modify these TOU at any time without advance
+            notice. Any changes to these TOU will be effective immediately upon
+            posting on this page, with an updated effective date. By accessing the
+            SWAYAM Site after any changes have been made, you signify your agreement
+            on a prospective basis to the modified TOU and all of the changes.
+            Be sure to return to this page periodically to ensure familiarity with
+            the most current version of these TOU.
+         </p>
+         <p>Any version of these TOU in a language other than English is provided
+            for convenience and you understand and agree that the English language
+            version will control if there is any conflict.
+         </p>
+         <h4>These TOU are organized as follows:</h4>
+         <ul>
+            <li>Rules for online conduct</li>
+            <li>Strictly prohibited items</li>
+            <li>User accounts</li>
+            <li>Your right to use content on the SWAYAM Site</li>
+            <li>User postings</li>
+            <li>Certificates and other products & services</li>
+            <li>Trademarks</li>
+            <li>Digital Millennium Copyright Act</li>
+            <li>Disclaimers of Warranty / Limitations of Liabilities</li>
+            <li>Indemnification</li>
+            <li>Additional Terms</li>
+         </ul>
+         <h4>Rules for Online Conduct</h4>
+         <p>You agree that you are responsible for your own use of the SWAYAM Site
+            and for your User Postings. "User Postings" means all content submitted,
+            posted, published, or distributed on the SWAYAM Site by you or other
+            users of the SWAYAM Site, including but not limited to all forum posts,
+            wiki edits, notes, questions, comments, videos, and file uploads. You
+            agree that you will use the SWAYAM Site in compliance with these
+            Agreements, and all applicable local, state, national and international
+            laws, rules and regulations, including copyright laws, any laws regarding
+            the transmission of technical data exported from your country of residence,
+            and all Indian laws governing the matter.
+         </p>
+         <p>As a condition of your use of the SWAYAM Site, you will not use the
+            SWAYAM Site in any manner intended to damage, disable, overburden,
+            or impair any SWAYAM server or the network(s) connected to any SWAYAM
+            server or to interfere with any other party's use and enjoyment of the
+            SWAYAM Site. You may not attempt to gain unauthorized access to the
+            SWAYAM Site, other accounts, computer systems, or networks connected
+            to any SWAYAM server through hacking, password mining, or any other means.
+            You may not obtain or attempt to obtain any materials or information
+            stored on the SWAYAM Site, its servers, or associated computers through
+            any means not intentionally made available through the SWAYAM Site.
+            If you are a registered user, you will not share your password or let
+            anyone else access or compromise your account.
+         </p>
+         <p>Furthermore, you agree not to scrape, or otherwise download in bulk,
+            any SWAYAM Site content, including but not limited to a list or directory
+            of users on the system, User Postings or user information, online
+            textbooks, course materials, or trademarks and logos. You agree not to
+            misrepresent or attempt to misrepresent your identity while using the
+            SWAYAM Site (although you are welcome and encouraged to use an anonymous
+            username in the forums and to act in a manner that keeps your identity
+            concealed).
+         </p>
+         <h4>Strictly Prohibited Items</h4>
+         <p>THE FOLLOWING ITEMS ARE STRICTLY PROHIBITED ON THE SWAYAM SITE:</p>
+         <ul>
+            <li>Content that defames, harasses or threatens others;</li>
+            <li>Content that discusses illegal activities with the intent to commit them;</li>
+            <li>Content that infringes another's intellectual property, including, but not limited to, copyrights or trademarks;</li>
+            <li>Profane, pornographic, obscene, indecent or unlawful content;</li>
+            <li>Advertising or any form of commercial solicitation;</li>
+            <li>Content related to partisan political activities;</li>
+            <li>Viruses, trojan horses, worms, time bombs, corrupted files, malware, spyware, or any other similar software that may damage the operation of another's computer or property; and</li>
+            <li>Content that contains intentionally inaccurate information or that is posted with the intent of misleading others (this list, collectively, “Strictly Prohibited Items”).</li>
+         </ul>
+         <p>You may not submit, post, publish, share, or otherwise distribute any
+            of the above Strictly Prohibited Items on or via the SWAYAM Site.</p>
+         <h4>User Accounts</h4>
+         <p>In order to create a user account, you may have to provide your full name,
+            and an email address. You agree that you will never divulge or share access
+            or access information for your user account with any third party for any
+            reason. In accessing specific courses inside the portal, you may be prompted
+            to enter additional optional information (e.g., your age group, your current
+            role, etc.). You represent that all information provided by you is accurate
+            and current. You agree to maintain and update your information to keep it
+            accurate and current.
+         </p>
+         <p>We care about the confidentiality and security of your personal
+            information. Please see the Privacy Policy for more information
+            about the collection and use of data on the SWAYAM Site.
+         </p>
+         <h4>Your Right to use Content on the SWAYAM Site</h4>
+         <p>Unless indicated as being in the public domain, the content on the SWAYAM
+            Site is protected by Indian and foreign copyright laws. Unless otherwise
+            expressly stated on the SWAYAM Site, the texts, exams, video, images, and
+            other instructional materials provided with the courses and programs
+            offered on the SWAYAM Site are for your personal use in connection with
+            those courses and programs only. Certain reference documents, digital
+            textbooks, articles, and other information on the SWAYAM Site are used
+            with the permission of third parties, and use of that information is
+            subject to certain rules and conditions, which will be posted along with
+            the information. By using the SWAYAM Site, you agree to abide by all such
+            rules and conditions. You agree to retain all copyright and other notices
+            on any content you obtain from the SWAYAM Site. All rights in the SWAYAM
+            Site and its content, if not expressly granted, are reserved.
+         </p>
+         <h4>Use for Personalization and Pedagogical Improvements</h4>
+         <p>Our goal is to provide current and future visitors to the SWAYAM Site with
+            the best possible educational experience. To further this goal, we
+            sometimes present different users with different versions of course materials
+            and software. We do this to personalize the experience to the individual
+            learner (to assess the learner’s level of ability and learning style, and
+            present materials best suited to the learner), to improve our understanding
+            of the learning process, and to evaluate and improve the effectiveness of
+            our course materials, payment models, platform features, and offerings.
+            We may publish or otherwise publicize results from this process, but, unless
+            otherwise permitted under the Privacy Policy, those publications or public
+            disclosures will not include your personal information.
+         </p>
+         <h4>User Postings</h4>
+         <h4>User Postings Representations and Warranties</h4>
+         <p>By submitting or distributing your User Postings, you affirm, represent,
+            and warrant (1) that you have the necessary rights, licenses, consents,
+            and/or permissions to reproduce and publish the User Postings and to
+            authorize SWAYAM and its users to reproduce, modify, publish, and otherwise
+            use and distribute your User Postings in a manner consistent with the
+            licenses granted by you below, and (2) that neither your submission of
+            your User Postings nor the exercise of the licenses granted below will
+            infringe or violate the rights of any third party. You, and not SWAYAM,
+            are solely responsible for your User Postings and the consequences of
+            posting or publishing them.
+         </p>
+         <h4>License Grant to SWAYAM and the Members</h4>
+         <p>By submitting or distributing your User Postings, you hereby grant to
+            SWAYAM and the Members (as described below) a worldwide, non-exclusive,
+            transferable, assignable, sub licensable, fully paid-up, royalty-free,
+            perpetual, irrevocable right and license to host, transfer, display,
+            perform, reproduce, modify, distribute, redistribute, relicense, and
+            otherwise use, make available, and exploit your User Postings, in whole
+            or in part, in any form and in any media formats and through any media
+            channels (now known or hereafter developed). By agreeing to the Terms
+            of Use you also agree to give the course instructors coming from these
+            member institutions access to the data generated by you.
+         </p>
+         <h4>CERTIFICATES AND OTHER PRODUCTS & SERVICES</h4>
+         <h4>General</h4>
+         <p>From time to time, SWAYAM and the colleges, universities, and other
+            institutions providing courses and programs on the SWAYAM Site
+            (collectively, the "Members") may offer services and products for a fee
+            (for example, course certificates). For anything that you choose to
+            purchase on the SWAYAM Site, you agree to pay all applicable fees when
+            due. As described in the Privacy Policy, the processing of your payment
+            information is done by a third-party payment vendor, and you will be
+            routed to a secure payment flow controlled by that vendor to complete
+            the payment transaction. Once your payment transaction is completed,
+            a SWAYAM confirmation page will be displayed, and you will receive a
+            confirmation email with your name, order number, and the payment amount.
+            Please retain this email for your records as this information will be
+            required if you seek a refund from SWAYAM.
+         </p>
+         <h4>No Other Enrollment</h4>
+         <p>Solely as a result of enrolling in or completing a course or program
+            provided by a Member through SWAYAM: (1) you will not be an applicant
+            for admission to, or enrolled in, any degree or other credit- or
+            credential-bearing program of such Member; and (2) you will not be
+            entitled to use any of the resources of such Member beyond the online
+            courses or programs provided on the SWAYAM Site and will not be eligible
+            to receive student privileges or benefits provided to students enrolled
+            in degree or other credit- or credential-bearing programs of the Member.
+         </p>
+         <h4>Trademarks</h4>
+         <h4>Use of SWAYAM, IIT, IISc, and Other Member Names, Trademarks, and Service Marks.</h4>
+         <p>The "SWAYAM," "IIT," and "IISc" and “Other Institutions that offer courses
+            in SWAYAM portal” names, logos and seals are trademarks ("Trademarks") of
+            the respective entities. Likewise, the names, logos, and seals of the other
+            Members are Trademarks owned by the respective Member. You may not use any
+            of these Trademarks, or any variations thereof, without the owner's prior
+            written consent. You may not use any of these Trademarks, or any variations
+            thereof, for promotional purposes, or in any way that deliberately or
+            inadvertently claims, suggests or, in the owner’s sole judgment, gives the
+            appearance or impression of a relationship with or endorsement by the owner.
+         </p>
+         <p>All Trademarks not owned by SWAYAM or the Members that appear on the
+            SWAYAM Site or on or through the services made available on or through
+            the SWAYAM Site, if any, are the property of their respective owners.
+         </p>
+         <p>Nothing contained on the SWAYAM Site should be construed as granting,
+            by implication, estoppel, or otherwise, any license or right to use any
+            Trademark displayed on the SWAYAM Site without the written permission of
+            the owner of the applicable Trademark.
+         </p>
+         <h4>Copyright</h4>
+         <p>Copyright owners who believe their material has been infringed on the
+            SWAYAM Site should contact <a href="#" onClick="email_form()" id="support_popup" class="emailClr">Support</a>.
+         </p>
+         <p>Communication must include:</p>
+         <ul>
+            <li>Identification of the copyrighted work, or, in the case of multiple
+               works at the same location, a representative list of such works at that
+               site.</li>
+            <li>Identification of the material that is claimed to be infringing or to
+               be the subject of infringing activity. You must include sufficient
+               information for us to locate the material (e.g., URL, IP address,
+               computer name).</li>
+            <li>Information for us to be able to contact the complaining party
+               (e.g., email address, phone number).</li>
+            <li>A statement that the complaining party believes that the use of the
+               material has not been authorized by the copyright owner or an authorized
+               agent.</li>
+            <li>A statement that the information in the notification is accurate and
+               that the complaining party is authorized to act on behalf of the
+               copyright owner.</li>
+         </ul>
+         <h4>Disclaimers of Warranty / Limitations of Liabilities</h4>
+         <p>THE SWAYAM SITE AND ANY INFORMATION, CONTENT OR SERVICES MADE AVAILABLE
+            ON OR THROUGH THE SWAYAM SITE ARE PROVIDED "AS IS" AND "AS AVAILABLE"
+            WITHOUT WARRANTY OF ANY KIND (EXPRESS, IMPLIED OR OTHERWISE), INCLUDING,
+            WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+            FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT, EXCEPT IN SO FAR AS ANY
+            SUCH IMPLIED WARRANTIES MAY NOT BE DISCLAIMED UNDER APPLICABLE LAW.
+         </p>
+         <p>SWAYAM AND THE SWAYAM PARTICIPANTS (AS DEFINED BELOW) DO NOT WARRANT THAT
+            THE SWAYAM SITE WILL OPERATE IN AN UNINTERRUPTED OR ERROR-FREE MANNER, THAT
+            THE SWAYAM SITE IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS, OR THAT THE
+            COURSES OR CONTENT PROVIDED WILL MEET YOUR NEEDS OR EXPECTATIONS. SWAYAM
+            AND THE SWAYAM PARTICIPANTS ALSO MAKE NO WARRANTY ABOUT THE ACCURACY,
+            COMPLETENESS, TIMELINESS, OR QUALITY OF THE SWAYAM SITE OR ANY COURSES OR
+            CONTENT, OR THAT ANY PARTICULAR COURSES OR CONTENT WILL CONTINUE TO BE
+            MADE AVAILABLE. “SWAYAM PARTICIPANTS” MEANS IIT, IISc, THE OTHER MEMBERS,
+            THE ENTITIES PROVIDING INFORMATION, CONTENT, OR SERVICES FOR THE SWAYAM
+            SITE, THE COURSE INSTRUCTORS, AND THEIR STAFFS.
+         </p>
+         <p>USE OF THE SWAYAM SITE, AND THE CONTENT AND SERVICES OBTAINED FROM OR
+            THROUGH THE SWAYAM SITE, IS AT YOUR OWN RISK. YOUR ACCESS TO OR DOWNLOAD
+            OF INFORMATION, MATERIALS, OR DATA THROUGH THE SWAYAM SITE OR ANY REFERENCE
+            SITES IS AT YOUR OWN DISCRETION AND RISK, AND YOU WILL BE SOLELY RESPONSIBLE
+            FOR ANY DAMAGE TO YOUR PROPERTY (INCLUDING YOUR COMPUTER SYSTEM) OR LOSS OF
+            DATA THAT RESULTS FROM THE DOWNLOAD OR USE OF SUCH MATERIAL OR DATA, UNLESS
+            OTHERWISE EXPRESSLY PROVIDED FOR IN THE PRIVACY POLICY.
+         </p>
+         <h4>User Postings Disclaimer</h4>
+         <p>You understand that when using the SWAYAM Site you will be exposed to User
+            Postings from a variety of sources and that neither SWAYAM nor the SWAYAM
+            Participants are responsible for the accuracy, usefulness, reliability or
+            intellectual property rights of or relating to such User Postings. You
+            further understand and acknowledge that you may be exposed to User Postings
+            that are inaccurate, offensive, defamatory, indecent or objectionable and
+            you agree to waive, and hereby do waive, any legal or equitable rights or
+            remedies you have or may have against SWAYAM or any of the SWAYAM Participants
+            with respect thereto. Neither SWAYAM nor any of the SWAYAM Participants
+            endorse any User Postings or any opinion, recommendation or advice expressed
+            therein. Neither SWAYAM nor any of the SWAYAM Participants have any obligation
+            to monitor any User Postings or any other user communications through the
+            SWAYAM Site.
+         </p>
+         <p>However, SWAYAM reserves the right to review User Postings and to exercise
+            its sole discretion to edit or remove, in whole or in part, any User
+            Posting at any time and for any reason, or to allow the SWAYAM Participants
+            to do so. Without limiting the foregoing, upon receiving notice from a
+            user or a content owner that a User Posting allegedly does not conform to
+            these TOU, SWAYAM may investigate the allegation and determine in its sole
+            discretion whether to remove the User Posting, which it reserves the right
+            to do at any time and without notice.
+         </p>
+         <h4>Third-Party Services; Links to Other Websites</h4>
+         <p>The SWAYAM Site and individual courses may be integrated with third-party
+            services or include hyperlinks to websites maintained or controlled by
+            third parties. SWAYAM and the SWAYAM Participants are not responsible for
+            and do not routinely screen, approve, review or endorse the contents of
+            or use of any of the products or services that may be offered by such
+            third parties. If you decide to access any third-party services or linked
+            third-party websites, you do so at your own risk.
+         </p>
+         <h4>Non-Liability</h4>
+         <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, YOU AGREE THAT NEITHER
+            SWAYAM NOR ANY OF THE SWAYAM PARTICIPANTS WILL BE LIABLE TO YOU FOR ANY
+            LOSS OR DAMAGES, EITHER ACTUAL OR CONSEQUENTIAL, ARISING OUT OF OR RELATING
+            TO THESE TERMS OF USE, OR YOUR (OR ANY THIRD PARTY'S) USE OF OR INABILITY
+            TO USE THE SWAYAM SITE, OR YOUR PLACEMENT OF CONTENT ON THE SWAYAM SITE,
+            OR YOUR RELIANCE UPON INFORMATION OBTAINED FROM OR THROUGH THE SWAYAM SITE,
+            WHETHER YOUR CLAIM IS BASED IN CONTRACT, TORT, STATUTORY OR OTHER LAW.
+         </p>
+         <p>IN PARTICULAR, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NEITHER
+            SWAYAM NOR ANY OF THE SWAYAM PARTICIPANTS WILL HAVE ANY LIABILITY FOR ANY
+            CONSEQUENTIAL, INDIRECT, PUNITIVE, SPECIAL, EXEMPLARY, OR INCIDENTAL
+            DAMAGES, WHETHER FORESEEABLE OR UNFORESEEABLE AND WHETHER OR NOT SWAYAM
+            OR ANY OF THE SWAYAM PARTICIPANTS HAS BEEN NEGLIGENT OR OTHERWISE AT FAULT
+            (INCLUDING, BUT NOT LIMITED TO, CLAIMS FOR DEFAMATION, ERRORS, LOSS OF
+            PROFITS, LOSS OF DATA, OR INTERRUPTION IN AVAILABILITY OF DATA).
+         </p>
+         <p>CERTAIN LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE
+            EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU,
+            SOME OR ALL OF THE ABOVE DISCLAIMERS, EXCLUSIONS, OR LIMITATIONS MAY NOT
+            APPLY TO YOU, AND YOU MIGHT HAVE ADDITIONAL RIGHTS.
+         </p>
+         <h4>Indemnification</h4>
+         <p>You agree to defend, hold harmless, and indemnify SWAYAM and the SWAYAM
+            Participants, and their respective subsidiaries, affiliates, officers,
+            faculty, students, fellows, governing board members, agents and employees
+            from and against any third-party claims, actions, or demands arising out
+            of, resulting from or in any way related to your use of the SWAYAM Site,
+            including any liability or expense arising from any and all claims, losses,
+            damages (actual and consequential), suits, judgments, litigation costs,
+            and attorneys' fees, of every kind and nature. In such a case, SWAYAM or
+            the applicable SWAYAM Participant will provide you with written notice of
+            such claim, suit, or action.
+         </p>
+         <h4>Additional Terms</h4>
+         <h4>Termination Rights; Discontinuation of Courses and Content</h4>
+         <p>You agree that SWAYAM, in its sole discretion, may terminate your use of
+            the SWAYAM Site or your participation in it, for any reason or no reason,
+            upon notice to you. It is SWAYAM's policy to terminate in appropriate
+            circumstances the accounts of users of the SWAYAM Site who are repeat
+            copyright infringers. SWAYAM and the SWAYAM Participants reserve the
+            right at any time in their sole discretion to cancel, delay, reschedule
+            or alter the format of any course offered through SWAYAM, or to cease
+            providing any part or all of the SWAYAM Site content or related services,
+            and you agree that neither SWAYAM nor any of the SWAYAM Participants will
+            have any liability to you for such an action. If you no longer desire to
+            participate in the SWAYAM Site, you may terminate your participation at
+            any time. The rights granted to you hereunder will terminate upon any
+            termination of your right to use the SWAYAM Site, but the other provisions
+            of the Agreements will survive any such termination.
+         </p>
+         <h4>Entire Agreement</h4>
+         <p>The Agreements constitute the entire agreement between you and SWAYAM
+            with respect to your use of the SWAYAM Site, superseding any prior
+            agreements between you and SWAYAM regarding your use of the SWAYAM Site.
+         </p>
+         <h4>Waiver and Severability</h4>
+         <p>The failure of SWAYAM to exercise or enforce any right or provision of
+            the Agreements shall not constitute a waiver of such right or provision.
+            If any provision of the Agreements is found by a court of competent
+            jurisdiction to be invalid, the parties nevertheless agree that the
+            court should endeavor to give effect to the parties' intentions as
+            reflected in the provision and the other provisions of the Agreements
+            shall remain in full force and effect.
+         </p>
+         <h4>Choice of Law/Forum Selection</h4>
+         <p>You agree that the Agreements and any claim or dispute arising out of
+            or relating to the Agreements or any content or service obtained from or
+            through the SWAYAM Site will be governed by the relevant and applicable
+            laws in India, excluding its conflicts of law provisions. You agree that
+            all such claims and disputes will be heard and resolved exclusively in
+            the state high court located in and serving Chennai, Tamil Nadu, India.
+            You consent to the personal jurisdiction of those courts over you for this
+            purpose, and you waive and agree not to assert any objection to such
+            proceedings in those courts (including any defense or objection of lack
+            of proper jurisdiction or venue or inconvenience of forum).
+         </p>
+         <h4>Effective Date:</h4>
+         <p>21-08-2020</p>
+         <br>
+      </div>
+   </div>
+</div>
+<!--Popup form for support-->
+
+<div class="pop_up_container notranslate">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" style="color: #FFFFFF;opacity: 1;" data-dismiss="modal" type="button">&times;</button>
+                    <h4 class="modal-title" style="color:#FFFFFF;font-size: 20px">SWAYAM SUPPORT</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <p style="font-size: 20px">Please choose the SWAYAM National Coordinator for support.<span class="text-danger">*</span> :</p>
+                        <select id="nc_email" onchange="display_nc_email()">
+                            <option disabled selected>select</option>
+                            <option value="cecmoocs.nc@gmail.com">CEC</option>
+                            <option value="iimbswayam@iimb.ac.in">IIMB</option>
+                            <option value="swayam.ignou@ignouonline.ac.in">IGNOU</option>
+                            <option value="nmcncert@ciet.nic.in">NCERT</option>
+                            <option value="SWAYAM@NITTTRC.EDU.IN">NITTTR</option>
+                            <option value="swayam@nios.ac.in">NIOS</option>
+                            <option value="aicteswayam@aicte-india.org">AICTE</option>
+                            <option value="support@nptel.iitm.ac.in">NPTEL</option>
+                        </select>
+                        <br> <br>
+                        <div id="nc_email_text" style="font-size: 18px;margin-left: -20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.modal-content > .modal-header {
+   background:#003366;
+}
+.modal-dialog {
+    width: 800px;
+}
+</style>
+
+<script>
+function email_form(){
+    try{
+        $("#myModal").modal('show');
+    }catch(e){
+        jQuery.noConflict();
+        $("#myModal").modal('show');
+    }
+
+}
+function display_nc_email(){
+    document.getElementById("nc_email_text").innerHTML = "Please send an email to <b>" + document.getElementById("nc_email").value + "</b> regarding your queries / issues";
+}
+</script>
+<style>
+   .public_header{
+   font-size: 26px;
+   color: #FFCC33;
+   font-family:roboto-light;
+   padding-top: 32px;
+   }
+</style>
+<section class="main" style="position:inherit;">
+<section id="social">
+  <div class="container">
+
+      <div class="row appcontainer">
+        <!--<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding-top:12px"> <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/social_GOI.jpg" /> </div>-->
+        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+          <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/mhrd_logo.png" alt="Ministry of Education logo"  style="margin-top:18px;" />
+          <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/swayam_logo.png" alt="Swayam logo" style="margin-top: 12px;margin-left: 20px;" />
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12" style="font-size:11px; color:#666666; line-height:14px;">
+        <h4>DOWNLOAD APP</h4>
+        <!--<div><a href="https://itunes.apple.com/in/app/swayam-online-education/id1146833429?mt=8"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/download_app_store_logo.png" /></a></div>-->
+        <div><a href="https://play.google.com/store/apps/details?id=in.gov.swayam.app"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/download_google_play_logo.png" alt="Go to Google play" /></a></div>
+        <!--<div><a href="https://www.microsoft.com/en-in/store/p/swayam/9nblggh4xxml"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/download_windows_store_logo.png" /></a></div>-->
+
+         </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-7 col-xs-12 notranslate">
+          <h4>FOLLOW US</h4>
+          <!--<img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/social.jpg" />-->
+          <ul class="social_icons">
+            <li><a href="https://www.facebook.com/swayammoocs/"><img src="https://storage.googleapis.com/swayam2_central/assets/images/icon_social/facebook_icon.png" width="35px" alt="Go to Facebook" class="facebook"/></a></li>
+            <li><a href="https://www.instagram.com/swayammhrd/"><img src="https://storage.googleapis.com/swayam2_central/assets/images/icon_social/instagram_icon.png" width="35px" alt="Go to Instagram" class="instagram"/></a></li>
+            <!--<li><a href="#"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/icon_social/icon_linkedin_selected.png" class="linkedin"/></a></li>-->
+            <li><a href="https://twitter.com/SWAYAMMHRD"><img src="https://storage.googleapis.com/swayam2_central/assets/images/icon_social/twitter_icon.png" width="35px" alt="Go to Twitter" class="twitter"/></a></li>
+            <!--<li><a href="#"><img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/icon_social/icon_youtube_selected.png" class="youtube"/></a></li>-->
+          </ul>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<section id="legal">
+  <div class="container">
+
+  <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+
+  <a href="https://swayam.gov.in/privacy_policy">Privacy Policy</a>   <span>|</span>   <a href="https://swayam.gov.in/terms_of_use">Terms of Use</a>   <span>|</span>   <a href="https://swayam.gov.in/honor_code">Honor Code</a> <span style="display:none">|</span>   <a href="#" style="display:none">FAQs</a></div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12 helpline">   <a href="#" onClick="email_form()" id="support_popup"><span class="notranslate"> SWAYAM </span> Helpline / Support</a> </div>
+
+  </div>
+  </div>
+</section>
+<!--/#bottom-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6"> &copy; 2024 <span class="notranslate"> SWAYAM </span>. All rights reserved. </div>
+      <div class="col-sm-6">
+        <div class="pull-right"> Initiative by : Ministry of Education (Govt of India) </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/#footer-->
+<!--Popup form for support-->
+
+<div class="pop_up_container notranslate">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" style="color: #FFFFFF;opacity: 1;" data-dismiss="modal" type="button">&times;</button>
+                    <h4 class="modal-title" style="color:#FFFFFF;font-size: 20px">SWAYAM SUPPORT</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <p style="font-size: 20px">Please choose the SWAYAM National Coordinator for support.<span class="text-danger">*</span> :</p>
+                        <select id="nc_email" onchange="display_nc_email()">
+                            <option disabled selected>select</option>
+                            <option value="cecmoocs.nc@gmail.com">CEC</option>
+                            <option value="iimbswayam@iimb.ac.in">IIMB</option>
+                            <option value="swayam.ignou@ignouonline.ac.in">IGNOU</option>
+                            <option value="nmcncert@ciet.nic.in">NCERT</option>
+                            <option value="SWAYAM@NITTTRC.EDU.IN">NITTTR</option>
+                            <option value="swayam@nios.ac.in">NIOS</option>
+                            <option value="aicteswayam@aicte-india.org">AICTE</option>
+                            <option value="support@nptel.iitm.ac.in">NPTEL</option>
+                        </select>
+                        <br> <br>
+                        <div id="nc_email_text" style="font-size: 18px;margin-left: -20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.modal-content > .modal-header {
+   background:#003366;
+}
+.modal-dialog {
+    width: 800px;
+}
+</style>
+
+<script>
+function email_form(){
+    try{
+        $("#myModal").modal('show');
+    }catch(e){
+        jQuery.noConflict();
+        $("#myModal").modal('show');
+    }
+
+}
+function display_nc_email(){
+    document.getElementById("nc_email_text").innerHTML = "Please send an email to <b>" + document.getElementById("nc_email").value + "</b> regarding your queries / issues";
+}
+</script>
+</section>
+<style>
+  .main{
+   bottom: 0px;
+   width: 100%;
+   }
+   @media (max-width: 767px) {
+   body{
+   padding-bottom: 400px;
+   }
+   }
+   @media (min-width: 768px) and (max-width: 991px) {
+   body{
+   padding-bottom: 240px;
+   }
+   }
+   @media (min-width: 992px) {
+   body{
+   padding-bottom: 175px;
+   }
+   }
+
+</style>
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+$(document).ready(function() {
+
+  $(".CheckboxContainer .container").click(function(){
+
+      $("input[type='checkbox']").click(function(e){
+
+          $div = $(this).parent();
+          text = $div[0].firstChild.nodeValue;
+          id_text = text.replace(/\s+/g, "");
+          id_text = id_text.replace("&", "_");
+
+          if($(this).prop("checked") == true){
+            $(".sf-filtertags ul").prepend("<li>"+text+"<a href='#' name='"+text+"' id='"+id_text+"' onclick='removeTagAndUncheck(this.id,this.name)'> X </a></li>");
+          }
+          else{
+            $("#"+id_text).parent().remove();
+          }
+
+          clearAllShowHide();
+          e.stopImmediatePropagation();
+        });
+    });
+
+    $('.dropdown-submenu a.submenu').on("click", function(e){
+        $.each($(".dropdown-submenu div.dropdown-menu"), function(){
+            if($(this).is(":visible")) {
+                if( $( "div" ).index( $(this).parent() ) != $( "div" ).index( $(e.target).next('div.dropdown-menu').parent() ) ){
+                    $(this).css("display","none");
+                    $(this).parent().find("i").removeClass("fa-angle-right");
+                    $(this).parent().find("i").addClass("fa-angle-down");
+                }
+            }
+        });
+
+        $(e.target).next('div').toggle();
+
+        if(($(e.target).next('div')).is( ":visible" )){
+            $(e.target).find("i").removeClass("fa-angle-down");
+            $(e.target).find("i").addClass("fa-angle-right");
+        }
+        else{
+            $(e.target).find("i").removeClass("fa-angle-right");
+            $(e.target).find("i").addClass("fa-angle-down");
+        }
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
+    $(".dropdown").on("show.bs.dropdown", function(event){
+        $( event.target).find("div.dropdown-menu").css("display","table") ;
+        $(event.target).find("i").removeClass("fa-angle-right");
+        $(event.target).find("i").addClass("fa-angle-down");
+    });
+    $(".dropdown").on("shown.bs.dropdown", function(){
+        $('.dropdown-submenu a.submenu').next('div').toggle();
+    });
+    $(".dropdown").on("hide.bs.dropdown", function(event){
+        $( event.target).find("div.dropdown-menu").css("display","none") ;
+    });
+});
+
+function clearAllShowHide(){
+  if ( $('.sf-filtertags ul li').length > 2 ) {
+    $("#clearAllTags").css("visibility","visible");
+  }else{
+    $("#clearAllTags").css("visibility","hidden");
+  }
+}
+
+function removeTagAndUncheck(id, name){
+  $("input[name='"+name.trim()+"']:checkbox").prop('checked', false);
+  $("#"+id).parent().remove();
+  clearAllShowHide();
+}
+
+function clearAllTags(){
+  $('.sf-filtertags ul').empty();
+  $('.sf-filtertags ul').prepend('<li id="clearAllTags" style="border:none;visibility: hidden;" onclick="clearAllTags()"><a href="#">Clear All</a></li>');
+  $('input:checkbox').removeAttr('checked');
+  clearAllShowHide();
+}
+
+//Hide Dropdown popover on out-focus
+$(document).on("focusin", function(event){
+    var $trigger = $(".dropdown");
+    if($trigger !== event.target && !$trigger.has(event.target).length){
+        $(".dropdown-menu").slideUp("fast");
+    }
+});
+
+$(window).click(function() {
+    $(".dropdown-menu").slideUp("fast");
+});
+</script>
+
+<script>
+$('a').click(function(){
+    if($(this).text().trim() == 'Show More' ){
+        $(this).html('Show Less <i class="fa fa-chevron-up"></i>');
+    }
+    else if($(this).text().trim() == 'Show Less' ){
+         $(this).html('Show More <i class="fa fa-chevron-down"></i>');
+    }
+});
+</script>
+</body>
+
+<!-- Mirrored from swayam.gov.in/terms_of_use by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 08:07:21 GMT -->
+</html>
+

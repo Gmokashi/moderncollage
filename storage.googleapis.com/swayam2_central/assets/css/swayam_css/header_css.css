@@ -1,0 +1,321 @@
+.modal-backdrop{
+    opacity:0.8 !important;
+}
+
+.homepage{
+    font-family: Poppins;
+    font-size: 12px;
+    padding-bottom: 0;
+}
+
+@media (min-width: 992px) {
+    #homePageModal {
+      text-align: center;
+      padding: 0!important;
+    }
+
+    #homePageModal:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -4px;
+    }
+
+    #homePageModal .modal-dialog {
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+    }
+}
+
+.modified-container{
+  padding: 0;
+  margin:0;
+  width: 100%;
+}
+
+.display-flex-space-btn{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .modal-dialog.modal-sm {
+    width: 300px;
+    margin: 30px auto;
+  }
+}
+
+.HomePageDropdown{
+    width: 140px;
+    height: 22px;
+    color: #333333;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.30px;
+    word-wrap: break-word"
+}
+
+.HeaderBanner a{
+    color: #666666;
+	padding: 15px 6px 20px 6px;
+	font-size: 135%;
+}
+
+.HeaderBanner a:hover{
+    color: #007EA8;
+}
+
+.header_padding{
+    padding: 10px 0px;
+}
+
+.HeaderMargin{
+    top: 0px !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+.user_email{
+    color: #333333;
+}
+
+.user_email:hover{
+    color: #428bca
+
+}
+
+.header_align{
+    text-align: center;
+}
+
+.dv-hide{
+  display: block;
+}
+
+.mv-display{
+  display: none;
+}
+
+.web-display{
+    display: block;
+}
+
+.custome-width {
+  width: var(--w);
+}
+
+.display-flex-align-center {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.header_align{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+
+@media (min-width: 1321px) and (max-width: 1550px) {
+
+  .HeaderBanner a {
+    font-size: 1.6rem !important;
+  }
+
+}
+
+@media (min-width: 1100px) and (max-width: 1320px) {
+
+.HeaderBanner a {
+  font-size: 1.3rem !important;
+}
+
+}
+
+@media (min-width: 1000px) and (max-width: 1100px) {
+
+.HeaderBanner a {
+  font-size: 1.1rem !important;
+}
+
+}
+
+@media (min-width: 200px) and (max-width: 675px) {
+
+.header_align {
+    flex-wrap: nowrap;
+}
+
+.mv-swayam-logo{
+    display: contents;
+    padding-left:5px;
+}
+
+  .mv-swayam-image {
+    width: 35%;
+    margin-left: 20px;
+}
+.mv-swayam-image-wrap{
+  justify-content: space-between;
+      display: flex;
+      width: 100%;
+}
+
+.dv-hide{
+  display: none;
+}
+.mv-display{
+  display: block;
+}
+
+.web-display{
+  display: none;
+}
+
+.mv-btn-tag {
+padding-top: 5% !important;
+}
+
+.mv-home-page-container{
+  margin: 55% 0 0 0;
+}
+
+.mv-margin0{
+  margin: 0;
+}
+    }
+
+.ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+    background: #032488 !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+}
+
+small .block-list-item-content {
+    min-height: .3rem;
+}
+
+.search-form-autocomplete-group {
+    display: flex;
+    align-items: center;
+}
+
+.search-form-autocomplete-group-course-img {
+    margin-right: .3rem;
+    padding-left: 0.8rem;
+}
+
+.search-form-autocomplete-suggestion-content {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.text-sm {
+    font-family: var(--font-stack-text);
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.4rem;
+}
+
+.heading-md {
+    font-family: var(--font-stack-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.6rem;
+}
+
+.search-form-autocomplete-suggestion-details {
+    display: flex;
+    margin-top: 0.4rem;
+    align-items: center;
+}
+
+.heading-xs {
+    font-family: var(--font-stack-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1.2rem;
+    letter-spacing: .02rem;
+    padding-top:0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-form-autocomplete-suggestion-instructor-name {
+    padding-left: 0.8rem;
+}
+
+.text-xs {
+    font-family: var(--font-stack-text);
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.2rem;
+    padding-left: 0.8rem;
+}
+
+input:hover,
+select:hover,
+textarea:hover,
+button:hover,
+ul.li.hover,
+a:hover{
+  cursor: pointer;
+}
+
+.top-section{
+    color: white;
+     padding:5px;
+     text-align: center;
+     font-size:12px
+}
+
+.goog-te-gadget {
+	font-size: 0px;
+}
+
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+	display: none;
+}
+
+.goog-logo-link {
+	display: none !important;
+}
+
+.goog-te-gadget {
+	color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo option {
+	color: black !important;
+}
+
+.goog-te-gadget .goog-te-combo option:first-child {
+	display: none;
+	color: transparent !important;
+}
+
+iframe.skiptranslate {
+	visibility: hidden !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+	display: none !important;
+}
