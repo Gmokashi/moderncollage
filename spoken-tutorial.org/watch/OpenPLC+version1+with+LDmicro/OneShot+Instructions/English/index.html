@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+
+
+
+<html>
+    
+<!-- Mirrored from spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OneShot+Instructions/English/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 08:07:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="V1Hqs8AUIIf-INbtXJxVdk81O1I3nXHa4Vccfw8oJaI" />
+        <title>
+            OneShot Instructions - English | spoken-tutorial.org
+        </title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+    <meta name="title" content="OneShot Instructions - English">
+    <meta name="description" content="The Tutorials in this series are created in LDmicro 2.2.4 on Ubuntu 16.04. OpenPLC is an open source Programmable Logic Controller. It is an Open Source Hardware initiative by FOSSEE Project at IIT Bombay
+
+
+OpenPLC version1 is based on ATMega16 AVR microcontroller. This cost effective, robust, dynamic and modular hardware with open source software enables students from various stream of Engineering and Polytechnics to learn Industrial automation using Ladder Logic programming language, One of the widely used language in automation industries.">
+    <meta name="keywords" content="OpenPLC version1 with LDmicro free training in india,  openplc version1 with ldmicro, ladder logic, ldmicro, oneshot, osr instructions, osf instructions, video tutorials, spoken tutorials ">
+
+        
+    <meta property="og:site_name" content="Spoken-Tutorial">
+    <meta property="og:url" content="spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OneShot+Instructions/English/">
+    <meta property="og:title" content="OneShot Instructions in English">
+    <meta property="og:image" content="https://spoken-tutorial.org/media/videos/118/1586/OneShot-Instructions-Small.png">
+    <meta property="og:description" content="The Tutorials in this series are created in LDmicro 2.2.4 on Ubuntu 16.04. OpenPLC is an open source Programmable Logic Controller. It is an Open Source Hardware initiative by FOSSEE Project at IIT Bombay
+
+
+OpenPLC version1 is based on ATMega16 AVR microcontroller. This cost effective, robust, dynamic and modular hardware with open source software enables students from various stream of Engineering and Polytechnics to learn Industrial automation using Ladder Logic programming language, One of the widely used language in automation industries.">
+
+    <meta property="og:type" content="video">
+    <meta property="og:video" content="/media/videos/118/1586/OneShot-Instructions-English.webm">
+    
+        <meta property="og:video:tag" content="openplc version1 with ldmicro">
+    
+        <meta property="og:video:tag" content=" ladder logic">
+    
+        <meta property="og:video:tag" content=" ldmicro">
+    
+        <meta property="og:video:tag" content=" oneshot">
+    
+        <meta property="og:video:tag" content=" osr instructions">
+    
+        <meta property="og:video:tag" content=" osf instructions">
+    
+        <meta property="og:video:tag" content=" video tutorials">
+    
+        <meta property="og:video:tag" content=" spoken tutorials">
+    
+
+        
+        
+        <link rel="shortcut icon" href="https://spoken-tutorial.org/static/spoken/images/favicon.ico" />
+        <!-- Bootstrap core CSS -->
+        <!-- google fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://spoken-tutorial.org/static/spoken/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="https://spoken-tutorial.org/static/spoken/css/font-awesome.min.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="https://spoken-tutorial.org/static/spoken/css/yamm-min.css" type="text/css" media="screen" charset="utf-8" />
+        
+    <link href="https://spoken-tutorial.org/static/spoken/css/video-js.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://spoken-tutorial.org/static/spoken/css/jquery.fancybox.pack.css" type="text/css" media="screen" charset="utf-8" />
+
+        <link rel="stylesheet" href="https://spoken-tutorial.org/static/CACHE/css/9fae52e21448.css" type="text/css" media="screen" />
+        
+        <link rel="stylesheet" href="https://spoken-tutorial.org/static/CACHE/css/20998b398b8b.css" type="text/css" />
+        
+    </head>
+    <body>
+        
+    <div id="slideshow">
+            
+            
+                
+                    <div class="announcement alert" style="background:#FFD700;">
+                        <div class="inner">
+                            <div class="text-container">
+                                <b><em><span style="color:#A33100; font-size: 15px;">Challenge the talent inside you, participate in Animate 2024! </em>&nbsp; &nbsp; <a style="color:white;background-color:#007EF4;padding:3px;border-radius:6px;" target="_blank" href="https://animate2024.fossee.in/"> Click here for details.</a></b>
+                                <!--<button type="button" class="close" data-dismiss="alert">&times;</button>-->
+                            </div>
+                        </div>
+                    </div>
+                
+            
+    </div>
+
+        <div id="page-wrapper">
+            <a href="#page-wrapper"></a>
+            <!-- header begin -->
+            <div id="header-wrapper">
+                <nav class="navbar yamm navbar-default " role="navigation">
+                    <div id="header-inner">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle Navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="https://spoken-tutorial.org/">
+                                        <img  src="https://spoken-tutorial.org/static/spoken/images/logo.png" alt="Spoken-Tutorial logo">
+                                        Spoken <span class='title'>Tutorial</span>
+                                    </a>
+                            </div>
+                            
+                            <div class="collapse navbar-collapse" id="main-nav">
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Software Training <b class="caret"></b></a>
+                                            <ul class="dropdown-menu events">
+                                                <div class="yamm-content">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                                <div class="col-sm-3 col-md-3 col-lg-3 column first mseprator">
+                                                                    <h5 class="media-heading"><b>Software Training</b></h5>
+                                                                    <div class="media-body">
+                                                                        <ul class="media-list">
+                                                                            <li class=""><a href="https://process.spoken-tutorial.org/index.php/Software-Training#About_SELF_Workshops" target="_blank">About the Training</a></li>
+                                                                            <li class=""><a href="https://process.spoken-tutorial.org/index.php/Software-Training#Progress_To_Date" target="_blank">Progress  to Date</a></li>
+                                                                            <li class=""><a href="https://process.spoken-tutorial.org/index.php/Software-Training#Software_Offered" target="_blank">Software Offered</a></li>
+                                                                            <li class=""><a href="https://process.spoken-tutorial.org/index.php/Software-Training#Contacts_For_Training" target="_blank">Contacts for Training</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/change-in-policy/" target="_blank">Change in Training Policy</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 col-md-3 col-lg-3 column second mseprator">
+                                                                    <h5 class="media-heading"><b>Procedures</b></h5>
+                                                                    <div class="media-body">
+                                                                        <ul class="media-list">
+                                                                            <li class=""><a href="https://process.spoken-tutorial.org/index.php/Software-Training#Organising_Training" target="_blank">Organising Training</a></li>
+                                                                            <li class=""><a href="https://process.spoken-tutorial.org/index.php/Software-Training#Downloading_Spoken_Tutorials" target="_blank">Instruction for Downloading Tutorials</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/cdcontent/" target="_blank">Create Your Own Disc Image</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/software-training/resource-center/">Resource Centers</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 col-md-3 col-lg-3 column third mseprator">
+                                                                    <h5 class="media-heading"><b>Training</b></h5>
+                                                                    <div class="media-body">
+                                                                        <ul class="media-list">
+                                                                            <li class=""><a href="https://spoken-tutorial.org/software-training/">Training & Payment Dashboard</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/software-training/training-planner/">Semester Training Planner Summary (STPS)</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/participant/login/">Student Dashboard</a></li>
+                                                                            <li class=""><span class="badge" id="nav-fdp" style="margin-right: 4px;">new</span><span class="text-muted" style="font-size: 1rem;">Individual Learning</span></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/training/list_events/ongoing/" target="_blank">Individual Learning Workshop</a></li>   <li class=""><a href="https://spoken-tutorial.org/training/verify-ilwtest-certificate/" target="_blank">Verify ILW test certificate </a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 col-md-3 col-lg-3 column last">
+                                                                    <h5 class="media-heading"><b>Online Test</b></h5>
+                                                                    <div class="media-body">
+                                                                        <ul class="media-list">
+                                                                        <li class=""><a href="https://process.spoken-tutorial.org/images/0/09/Instructions_for_Invigilator.pdf" target="_blank">Instruction for Invigilator</a></li>
+                                                                        <li class=""><a href="https://process.spoken-tutorial.org/images/9/95/Test_Instruction_for_Participants.pdf" target="_blank">Instruction for Participants</a></li>
+                                                                        <li class=""><a href="https://spoken-tutorial.org/software-training/test/verify-test-certificate/" target="_blank">Certificate Verification Link</a></li>
+                                                                        <li class=""><a href="https://spoken-tutorial.org/accounts/verify/" target="_blank">Email Verification Link</a></li>
+                                                                        <li class=""><span class="badge" id="nav-fdp"style="margin-right: 4px;">new</span><a href="https://jrs.spoken-tutorial.org/" target="_blank">Job Recommendation</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        <!-- -->
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Creation <b class="caret"></b></a>
+                                            <ul class="dropdown-menu creation">
+                                                <div class="yamm-content">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="col-sm-6 col-md-6 col-lg-6 column first mseprator">
+                                                                    <!-- <h5 class="media-heading"><b>Contributor</b></h5> -->
+                                                                    <div class="media-body">
+                                                                        <ul class="media-list">
+                                                                            
+                                                                            <li class=""><a target="_blank" href="https://process.spoken-tutorial.org/index.php/Main_Page">Creation Process</a></li>
+                                                                            <li class=""><a target="_blank" href="https://script.spoken-tutorial.org/index.php/Main_Page">Outline and Script</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/creation">Creation Dashboard</a></li>
+
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 col-md-6 col-lg-6 column second">
+                                                                    <!-- <h5 class="media-heading"><b>Indian Language</b></h5> -->
+                                                                    <div class="media-body">
+                                                                        <ul class="media-list">
+                                                                            <li class=""><a href="https://spoken-tutorial.org/creation/suggest-a-topic/">Suggest a Topic</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/creation/suggest-an-example/">Suggest an Example</a></li>
+                                                                            <li class=""><a href="https://spoken-tutorial.org/creation/collaborate/">Collaborate with Us</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        
+
+	
+		
+			<li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" href="#">News <b class="caret"></b></a>
+				<ul class="dropdown-menu creation">
+					
+					    
+						<li><a href="https://spoken-tutorial.org/testimonials/" >Testimonials</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/news/articles-on-spoken-tutorial-project" >Articles on Spoken Tutorial project</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/news/news-and-events" >Events &amp; Happenings</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/research-popular-articles/" >Research / Popular Articles</a></li>
+					
+				</ul>
+			</li>
+		
+	
+
+	
+		
+			<li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" href="#">Academics <b class="caret"></b></a>
+				<ul class="dropdown-menu creation">
+					
+					    
+						<li><a href="https://spoken-tutorial.org/news/moocs-acceptance/" >MOOCs acceptance</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/news/official-letters-and-links/" >Official Letters and Links</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/news/articles-on-university-tie-ups-workshops" >Articles on University tie-ups/workshops</a></li>
+					
+				</ul>
+			</li>
+		
+	
+
+	
+		
+			<li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" href="#">About <b class="caret"></b></a>
+				<ul class="dropdown-menu creation">
+					
+					    
+						<li><a href="https://spoken-tutorial.org/about-us/" >About Us</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/team/Creation-Team/" >Team</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/mission/" >Mission</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/creation/view_brochure" >Brochures</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/stinternship2022/" target="_blank">FOSSEE Semester-long Internship 2022</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/series_tutorial-search/?search_otherfoss=Health+and+Nutrition&amp;search_otherlanguage=English" target="_blank">Health and Nutrition page</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/archived/" target="_blank">Archived FOSS</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/project_documents/" target="_blank">Project Documents</a></li>
+					
+				</ul>
+			</li>
+		
+	
+
+	
+		
+			<li>
+    			<a href="http://forums.spoken-tutorial.org/" target="_blank">Forums</a>
+			</li>
+		
+	
+
+	
+		
+			<li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown" href="#">Statistics <b class="caret"></b></a>
+				<ul class="dropdown-menu creation">
+					
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/training/" >Training</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/pmmmnmtt/fdp/" >FDP Training</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/tutorial-content/" >Creation Content</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/online-test/" >Online-Test</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/academic-center/" >Academic Center</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/" >India Map</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/motion-chart/" >Motion Charts</a></li>
+					
+					    
+					        <li class="divider"></li>
+					    
+						<li><a href="https://spoken-tutorial.org/statistics/ilw/" >ILW Training</a></li>
+					
+				</ul>
+			</li>
+		
+	
+
+
+                                    </ul>
+                                    
+                                    <ul class="nav navbar-nav navbar-right">
+                                        
+                                            
+                                                <li class="dropdown">
+                                                    <a href="https://spoken-tutorial.org/accounts/login">Login</a>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="https://spoken-tutorial.org/accounts/register">Register</a>
+                                                </li>
+                                            
+                                        
+                                    </ul>
+                            </div>
+                        </div> <!-- /.container-fluid -->
+                    </div> <!-- /#header-inner -->
+                </nav>
+            </div> <!-- /#header-wrapper -->
+             
+            
+            
+            
+            
+            
+            <!-- header end -->
+            <div id="content-wrapper">
+                <div id="content-inner" class="container">
+                    
+    <div id="content-block" class="col-lg-12 col-md-12 col-sm-12">
+
+
+                    
+                        <div id="content" class="col-lg-12 col-md-12 col-sm-12">
+                    
+                            
+                                <h1 class="page-title">OneShot Instructions - English</h1>
+                            
+                            
+                                
+                            
+                            <div class="actual-data">
+    
+    <row>
+        
+        <div class='container playlist-container col-lg-12 col-md-12 col-sm-12'>
+            <div class="video-container col-lg-8 col-md-8 col-sm-8 " >
+                        <video id="st_video" class="video-js vjs-default-skin" controls preload="none" poster="https://spoken-tutorial.org/media/videos/118/1586/OneShot-Instructions-Big.png" width="auto" height="auto" data-setup="{}">
+                            <!-- <source src="/static/spoken/images/Overview-and-Installation-of-Git-English.ogv" type="video/ogg" /> -->
+			    <source src="https://spoken-tutorial.org/media/videos/118/1586/OneShot-Instructions-English.webm" type="video/webm" />
+                             
+                                 
+                             
+                            
+                        </video>
+            </div>
+
+
+<div class="container">
+
+<div id="content">
+    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+     
+        <li style="width:190px" class="active" ><a href="#forums" data-toggle="tab">Questions posted on Forums</a></li>
+                <li style="width:180px;" ><a style= "min-height: 60px;padding-top: 12px;" href="#tutorials" data-toggle="tab">OpenPLC version1 with LDmicro Tutorials - English </a></li>
+     <div id="my-tab-content" class="tab-content">
+
+<div class="tab-pane active" id="forums" >
+<div id="forums_Q" class='ScrollStyle' style="width: 32%; " >
+ 
+  
+            <p style=" text-align: center; padding: 40px"> No questions yet</p>
+        
+        </div>
+
+        </div>
+    
+        <div class="tab-pane " id="tutorials" >
+            <div class='playlist col-lg-4 col-md-4 col-sm-4' style="width: 32%">
+           
+        <div class='playlist-controls'>
+            <span class='backward'></span>
+        <span class=" video-count pull-right" style="color: #ffffff;" >27</span>
+            <span class='forward'></span>
+        </div>
+        <ul>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Overview+of+OpenPLC+version1+with+LDmicro/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>1</span>
+                    <img alt="Overview of OpenPLC version1 with LDmicro - thumb" src="https://spoken-tutorial.org/media/videos/118/1475/Overview-of-OpenPLC-version1-with-LDmicro-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Overview of OpenPLC version1 with LDmicro
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Installation+of+LDmicro+on+Linux/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>2</span>
+                    <img alt="Installation of LDmicro on Linux - thumb" src="https://spoken-tutorial.org/media/videos/118/1276/Installation-of-LDmicro-on-Linux-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Installation of LDmicro on Linux
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Installation+of+LDmicro+on+Windows/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>3</span>
+                    <img alt="Installation of LDmicro on Windows - thumb" src="https://spoken-tutorial.org/media/videos/118/1278/Installation-of-LDmicro-on-Windows-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Installation of LDmicro on Windows
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Introduction+to+LDmicro/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>4</span>
+                    <img alt="Introduction to LDmicro - thumb" src="https://spoken-tutorial.org/media/videos/118/1322/Introduction-to-LDmicro-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Introduction to LDmicro
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Simulation+and+Compilation/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>5</span>
+                    <img alt="Simulation and Compilation - thumb" src="https://spoken-tutorial.org/media/videos/118/1455/Simulation-and-Compilation-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Simulation and Compilation
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OpenPLC+version+1+Mainboard/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>6</span>
+                    <img alt="OpenPLC version 1 Mainboard - thumb" src="https://spoken-tutorial.org/media/videos/118/1454/OpenPLC-version-1-Mainboard-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    OpenPLC version 1 Mainboard
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Programming+OpenPLC/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>7</span>
+                    <img alt="Programming OpenPLC - thumb" src="https://spoken-tutorial.org/media/videos/118/1456/Programming-OpenPLC-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Programming OpenPLC
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OpenPLC+Traffic+Light+and+Switchboard+Modules/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>8</span>
+                    <img alt="OpenPLC Traffic Light and Switchboard Modules - thumb" src="https://spoken-tutorial.org/media/videos/118/1645/OpenPLC-Traffic-Light-and-Switchboard-Modules-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    OpenPLC Traffic Light and Switchboard Modules
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Normal+Coil/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>9</span>
+                    <img alt="Normal Coil - thumb" src="https://spoken-tutorial.org/media/videos/118/1532/Normal-Coil-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Normal Coil
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Normal+Contact/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>10</span>
+                    <img alt="Normal Contact - thumb" src="https://spoken-tutorial.org/media/videos/118/1533/Normal-Contact-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Normal Contact
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Negated+Coil+and+Negated+Contact/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>11</span>
+                    <img alt="Negated Coil and Negated Contact - thumb" src="https://spoken-tutorial.org/media/videos/118/1534/Negated-Coil-and-Negated-Contact-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Negated Coil and Negated Contact
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Implementing+NOT+and+AND+logic+gates/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>12</span>
+                    <img alt="Implementing NOT and AND logic gates - thumb" src="https://spoken-tutorial.org/media/videos/118/1535/Implementing-NOT-and-AND-logic-gates-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Implementing NOT and AND logic gates
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Implementing+OR+and+XOR+logic+gates/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>13</span>
+                    <img alt="Implementing OR and XOR logic gates - thumb" src="https://spoken-tutorial.org/media/videos/118/1536/Implementing-OR-and-XOR-logic-gates-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Implementing OR and XOR logic gates
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Internal+Relay+and+Output+pin/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>14</span>
+                    <img alt="Internal Relay and Output pin - thumb" src="https://spoken-tutorial.org/media/videos/118/1575/Internal-Relay-and-Output-pin-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Internal Relay and Output pin
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/SET+and+RESET+Coils/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>15</span>
+                    <img alt="SET and RESET Coils - thumb" src="https://spoken-tutorial.org/media/videos/118/1576/SET-and-RESET-Coils-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    SET and RESET Coils
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item active" data="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OneShot+Instructions/English/16">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OneShot+Instructions/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'><i class="fa fa-play"></i></span>
+                    <img alt="OneShot Instructions - thumb" src="https://spoken-tutorial.org/media/videos/118/1586/OneShot-Instructions-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    OneShot Instructions
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Arithmetic+Instructions/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>17</span>
+                    <img alt="Arithmetic Instructions - thumb" src="https://spoken-tutorial.org/media/videos/118/1587/Arithmetic-Instructions-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Arithmetic Instructions
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Move+Instructions/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>18</span>
+                    <img alt="Move Instructions - thumb" src="https://spoken-tutorial.org/media/videos/118/1588/Move-Instructions-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Move Instructions
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/Compare+Instructions/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>19</span>
+                    <img alt="Compare Instructions - thumb" src="https://spoken-tutorial.org/media/videos/118/1589/Compare-Instructions-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    Compare Instructions
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/TON+and+TOFF+Instructions/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>20</span>
+                    <img alt="TON and TOFF Instructions - thumb" src="https://spoken-tutorial.org/media/videos/118/1590/TON-and-TOFF-Instructions-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    TON and TOFF Instructions
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/RTO+Timer+Instruction/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>21</span>
+                    <img alt="RTO Timer Instruction - thumb" src="https://spoken-tutorial.org/media/videos/118/1591/RTO-Timer-Instruction-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    RTO Timer Instruction
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/CTU+Counter/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>22</span>
+                    <img alt="CTU Counter - thumb" src="https://spoken-tutorial.org/media/videos/118/1592/CTU-Counter-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    CTU Counter
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/CTD+Counter/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>23</span>
+                    <img alt="CTD Counter - thumb" src="https://spoken-tutorial.org/media/videos/118/1593/CTD-Counter-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    CTD Counter
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/CTC+Counter/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>24</span>
+                    <img alt="CTC Counter - thumb" src="https://spoken-tutorial.org/media/videos/118/1594/CTC-Counter-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    CTC Counter
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OpenPLC+Heater+module/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>25</span>
+                    <img alt="OpenPLC Heater module - thumb" src="https://spoken-tutorial.org/media/videos/118/1635/OpenPLC-Heater-module-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    OpenPLC Heater module
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/AD+Converter+Read+Instruction/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>26</span>
+                    <img alt="AD Converter Read Instruction - thumb" src="https://spoken-tutorial.org/media/videos/118/1595/AD-Converter-Read-Instruction-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    AD Converter Read Instruction
+                </div>
+                </a>
+            </li>
+            
+            <li class="playlist-item">
+                <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/PWM+Instruction/English/">
+                <div class='pull-left thumb'>
+                    <span class='order'>27</span>
+                    <img alt="PWM Instruction - thumb" src="https://spoken-tutorial.org/media/videos/118/1596/PWM-Instruction-Small.png" width=70 >
+                </div>
+                <div class='description'>
+                    PWM Instruction
+                </div>
+                </a>
+            </li>
+            
+        </ul>
+        </div>
+        </div>
+     
+
+    </div>
+</div>
+    </ul>
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+       $("#tabs").tab();
+       
+    });
+</script> 
+</div> <!-- container -->
+
+        </div>
+    </row>
+    
+    <row>
+        <div class="inner-content-body col-lg-8 col-md-8 col-sm-8 no-padding">
+            <div class="inner-shadow">
+                <div class="row video-share">
+                    <div class="ysubscribe pull-left col-lg-9 col-md-9 col-sm-9">
+                        <div class="g-ytsubscribe" data-channel="SpokenTutorialIITB" data-layout="full" data-count="default" data-onytevent="onYtEvent"></div>
+                    </div>
+                    <p class="video-visits pull-right col-lg-3 col-md-3 col-sm-3">1795 visits</p>
+                </div>
+                <hr class="hline" />
+                <ol class="breadcrumb">
+                    
+                        
+                            <li><a href="https://spoken-tutorial.org/media/videos/118/OpenPLC-version1-with-LDmicro-Instruction-Sheet-English.pdf" target="_blank">Instruction Sheet</a></li>
+                        
+                    
+
+                    
+                        
+                            <li><a href="https://spoken-tutorial.org/media/videos/118/OpenPLC-version1-with-LDmicro-Installation-Sheet-English.pdf" target="_blank">Installation Sheet</a></li>
+                        
+                    
+                    <li><a href="https://spoken-tutorial.org/creation/report-missing-component/12776" class="fancybox fancybox.iframe"> Report Missing Component</a></li>
+
+                    <li><a id="text" target="_blank" href="#" class="forum-post">Post your Question on the Forum</a></li>
+         <!--<li><p id="playerHolder"></p></li> 
+	<li><p id="playerHolder1"></p></li> !-->
+
+                </ol>
+                <hr class="hline" />
+                <pre class="custom-jumbotron"><h3><b>Outline:</b></h3><p>
+Connection of SMPS and USBasp to the Mainbaord
+Insert Contact, OSR and Coil in the same order
+Real-time simulation of OSR
+Change cycle time to 3000ms and simulate the OSR logic again
+Make hardware connections for the OSR using Traffic light module and Switchboard module
+Working of OSR on hardware
+Replace OSR with OSF
+Real-time simulation of OSF
+Make hardware connections for the OSF using Traffic light module and Switchboard module
+Working of OSF on hardware
+
+</p></pre>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 no-padding right-bar">
+            <div class="inner-sidebar">
+                <div class="video-info-show-more">
+                    <div class="video-info">
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <th>Width:</th><td>826</td>
+                                <th>Height:</th><td>624</td>
+                            </tr>
+                            <tr>
+                                <th>Duration:</th><td>00:11:37</td>
+                                <th>Size:</th><td>4.3 MB</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="video-show-more no-record">Show video info</p>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p class="panel-body-heading"><i class="fa fa-youtube-play fa-1"></i> Pre-requisite</p>
+                        <hr class="hline" />
+                        
+                            
+                                
+                                    <a href="https://spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/SET+and+RESET+Coils/English/"><img src="https://spoken-tutorial.org/media/videos/118/1576/SET-and-RESET-Coils-Small.png" width="70" style="padding-right: 10px;">
+                                    SET and RESET Coils</a>
+                                
+                            
+                        
+                    </div>
+                </div>
+                <div class="list-group">
+                    
+                        <div  class="list-group-item-container">
+                            <a href="https://spoken-tutorial.org/media/videos/118/1586/resources/OneShot-Instructions-Assignment.txt" target="_blank" class="list-group-item">
+                                <h4 class="list-group-item-heading"><i class="fa fa-1 fa-file-text"></i>&nbsp; Assignment</h4>
+                            </a>
+                        </div>
+                    
+                    
+                        <div  class="list-group-item-container">
+                            <a href="https://spoken-tutorial.org/media/videos/118/1586/resources/OneShot-Instructions-Codefiles.zip" target="_blank" class="list-group-item">
+                                <h4 class="list-group-item-heading"><i class="fa fa-1 fa-archive"></i> Code files</h4>
+                                
+                                    
+                                        
+                                            <hr class="hline" />
+                                            <ul class="list-zipfiles">
+                                                
+                                                    <li>CodeFiles-OneShot-Instruction/</li>
+                                                
+                                                    <li>CodeFiles-OneShot-Instruction/osf.hex</li>
+                                                
+                                                    <li>CodeFiles-OneShot-Instruction/osf.ld</li>
+                                                
+                                                    <li>CodeFiles-OneShot-Instruction/osr.hex</li>
+                                                
+                                                    <li>CodeFiles-OneShot-Instruction/osr.ld</li>
+                                                
+                                            </ul>
+                                        
+                                    
+                                
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="list-group-item-container">
+                            <a href="https://script.spoken-tutorial.org/index.php/OpenPLC-version1-with-LDmicro/C3/OneShot-Instructions/English" target="_blank" class="list-group-item">
+                                <h4 class="list-group-item-heading"><i class="fa fa-1 fa-link"></i> Script</h4>
+                            </a>
+                        </div>
+                        
+                            
+                                
+                            
+                        
+                    
+                    
+                        <div class="list-group-item-container">
+                            <a  href="https://spoken-tutorial.org/media/videos/118/1586/resources/OneShot-Instructions-Slides.zip" target="_blank" class="list-group-item">
+                                <h4 class="list-group-item-heading"><i class="fa fa-1 fa-archive"></i> Slides</h4>
+                                
+                                    
+                                        
+                                            <hr class="hline" />
+                                            <ul class="list-zipfiles">
+                                                
+                                                    <li>Slides-OneShot-Instructions/</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/hardware-prerequisite.jpg</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/osr.png</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/osf.png</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/laptop-usbasp.jpg</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/fossee-logo.png</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/OneShot-Instructions.pdf</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/OneShot-Instructions.tex</li>
+                                                
+                                                    <li>Slides-OneShot-Instructions/st-logo.png</li>
+                                                
+                                            </ul>
+                                        
+                                    
+                                
+                            </a>
+                        </div>
+                    
+                    
+                </div>
+                
+            </div>
+        </div>
+    </row>
+</div>
+                            
+                                
+                             
+                        </div>
+                    </div>
+                </div><!-- /#content-inner .container -->
+            </div><!-- /#content-wrapper -->
+            <div id="footer-wrapper">
+                <div class="container-inner sans-serif">
+                    <div class="container">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 footer-links">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="https://fossee.in/" target="_blank">FOSSEE Project</a></li>
+                                    <li><a href="https://www.scilab.in/" target="_blank">Scilab</a></li>
+                                    <li><a href="https://esim.fossee.in/" target="_blank">eSim (Oscad)</a></li>
+                                    <li><a href="https://python.fossee.in/" target="_blank">Python</a></li>
+                                    <li><a href="https://cfd.fossee.in/" target="_blank">OpenFoam (CFD)</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="https://aakashlabs.org/" target="_blank">Aakash Labs</a></li>
+                                    <li><a href="https://www.co-learn.in/" target="_blank">Co-learn</a></li>
+                                    <li><a href="https://www.sakshat.ac.in/" target="_blank">Education Mission</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="https://process.spoken-tutorial.org/index.php/Software-Training" target="_blank">Software Training</a></li>
+                                    <li class=""><a href="https://process.spoken-tutorial.org/index.php/Software-Training#Contacts_For_Training" target="_blank">Contacts for Training</a></li>
+                                    <li><a href="https://spoken-tutorial.org/software-training/">Training Dashboard</a></li>
+                                    <li><a href="https://spoken-tutorial.org/creation/">Creation Dashboard</a></li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <ul class="list-unstyled">
+                                    <li><a href="https://spoken-tutorial.org/about-us/">About Us</a></li>
+                                    <li><a href="https://spoken-tutorial.org/news/article/">News</a></li>
+                                    <!-- <li><a href="#" target="_blank">Partners</a></li> -->
+                                    
+                                    <li class="st-statcounter-seperator"></li>
+                                    <li class="st-statcounter">
+                                        <!-- Start of StatCounter Code for Default Guide --> 
+                                        <script type='text/javascript'> 
+                                        var sc_project=5528933; 
+                                        var sc_invisible=1; 
+                                        var sc_security="e5fd867b"; 
+                                        var sc_https=1; 
+                                        var scJsHost = (("https:" == document.location.protocol) ? 
+                                        "https://secure." : "http://www."); 
+                                        document.write("<sc"+"ript type='text/javascript' async src='" + 
+                                        scJsHost+ 
+                                        "statcounter.com/counter/counter_xhtml.js'></"+"script>"); 
+                                        </script> 
+                                        <noscript><div class='statcounter'><a class='statcounter' href='http://statcounter.com/free-web-stats/' title='web stats'><img alt='web stats' class='statcounter' src='http://c.statcounter.com/5528933/0/e5fd867b/1/'/></a></div></noscript> 
+                                        <!-- End of StatCounter Code for Default Guide --> 
+
+                                        <!-- ol code below-->
+                                        <!-- Start of StatCounter Code for Default Guide -->
+                                        <b>
+                                            <script type="text/javascript">
+                                                var sc_project=5528933;
+                                                var sc_invisible=0;
+                                                var sc_security="e5fd867b";
+                                                var sc_text=2;
+                                            </script>
+                                            <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+                                            <noscript>
+                                                <div class="statcounter">
+                                                    <a title="hits counter" href="https://statcounter.com/" target="_blank">
+                                                        <img class="statcounter" src="https://c.statcounter.com/5528933/0/e5fd867b/0/" alt="hits counter">
+                                                    </a>
+                                                </div>
+                                            </noscript>
+                                        </b> page loads
+                                        <!-- End of StatCounter Code for Default Guide -->
+                                        <p><a href="https://statcounter.com/p5528933/?guest=1" target="_blank">Click here to view stats</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 footer-seperator"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 license fill iitb-logo">
+                            <div class="fill">
+                                <a href="http://www.iitb.ac.in/" target="_blank">
+                                    <img width="110px" src="https://spoken-tutorial.org/static/spoken/images/iitb-logo.png" alt="IITB Logo">
+                                    <footer>
+                                        Developed at IIT Bombay <br />
+                                    </footer>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                             <p class="cc-data">
+                                <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                                    <img src="https://spoken-tutorial.org/static/spoken/images/88x31.png" alt="CC logo" />
+                                </a> Spoken Tutorial by <a href="http://www.iitb.ac.in/" target="_blank">IIT Bombay</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>, except where stated otherwise <a data-toggle="tooltip" data-placement="top" title="Series which are not shared under CC BY SA but have a perpetual permission to display are: PHP & MySQL, GIMP, Health Series."><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></a><br />Based on a work at <a xmlns:dct="https://purl.org/dc/terms/" href="https://spoken-tutorial.org/" rel="dct:source">https://spoken-tutorial.org</a>. Permissions beyond the scope of this license may be available at <a xmlns:cc="https://creativecommons.org/ns#" href="https://spoken-tutorial.org/" rel="cc:morePermissions">https://spoken-tutorial.org</a>.
+                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /#page-wrapper -->
+        
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://spoken-tutorial.org/static/spoken/js/jquery-1.11.0.min.js"></script>
+        <script src="https://spoken-tutorial.org/static/spoken/js/bootstrap.min.js"></script>
+    
+    <script src="https://spoken-tutorial.org/static/spoken/js/video.min.js"></script>
+    <script src="https://spoken-tutorial.org/static/spoken/js/jquery.fancybox.pack.js"></script>
+    <script src="https://spoken-tutorial.org/static/spoken/js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+        <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+
+    <script type="text/javascript" src="https://spoken-tutorial.org/static/CACHE/js/fbf43a16d172.js"></script>
+    
+    <script type="text/javascript" src="https://spoken-tutorial.org/static/CACHE/js/c20ee12b85df.js"></script>
+    
+    <script>
+        /* Slideshow */
+        var stop = 1
+        $('#slideshow').hover(function(){
+            stop = 0
+        }, function(){
+            stop = 1
+        });
+        if($(".announcement").length > 1){
+            $("#slideshow > div:gt(0)").hide();
+            setInterval(function() {
+              if(stop){
+                  $('#slideshow > div:first')
+                    .fadeOut(0)
+                    .next()
+                    .fadeIn(0)
+                    .end()
+                    .appendTo('#slideshow');
+                 }
+            },  5000);
+        }
+        $('.close').click(function(){
+            $(".navbar-fixed-top").css({'top' : '0px', 'position' : 'fixed'});
+            $("#header-wrapper").css({'height' : '0px'});
+        });
+    </script>
+
+    </body>
+
+<!-- Mirrored from spoken-tutorial.org/watch/OpenPLC+version1+with+LDmicro/OneShot+Instructions/English/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2024 08:07:12 GMT -->
+</html>
